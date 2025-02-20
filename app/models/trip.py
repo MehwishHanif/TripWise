@@ -21,3 +21,18 @@ class Trip(db.Model):
     # Relationships
     user = db.relationship("User", back_populates="trips")
     activities = db.relationship("Activity", back_populates="trip", cascade="all, delete-orphan")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'userId': self.user_id,
+            'destination': self.destination,
+            'description': self.description,
+            'startDate': self.start_date.isoformat() if self.start_date else None,
+            'endDate': self.end_date.isoformat() if self.end_date else None,
+            'isPrivate': self.is_private,
+            'createdAt': self.created_at.isoformat() if self.created_at else None,
+            'updatedAt': self.updated_at.isoformat() if self.updated_at else None,
+            'activityIds' : [activity.id for activity in self.activities] if self.activities else []
+        }

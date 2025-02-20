@@ -41,3 +41,17 @@ class Activity(db.Model):
 
     # Relationship
     trip = db.relationship("Trip", back_populates="activities")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'tripId': self.trip_id,
+            'category': self.category.value if self.category else None,
+            'location': self.location,
+            'notes': self.notes,
+            'startTime': self.start_time.isoformat() if self.start_time else None,
+            'endTime': self.end_time.isoformat() if self.end_time else None,
+            'createdAt':self.created_at.isoformat() if self.created_at else None,
+            'updatedAt': self.updated_at.isoformat() if self.updated_at else None
+        }

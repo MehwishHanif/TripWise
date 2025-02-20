@@ -11,6 +11,7 @@ def seed_trips():
             user_id=trip['user_id'],
             name=trip['name'],
             destination=trip['destination'],
+            description=trip['description'],
             start_date=datetime.strptime(trip['start_date'], '%Y-%m-%d').date(),
             end_date=datetime.strptime(trip['end_date'], '%Y-%m-%d').date(),
             is_private=trip['is_private']
