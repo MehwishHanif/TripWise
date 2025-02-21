@@ -1,5 +1,7 @@
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
+const ADD_USER_TRIP = "session/addUserTrip ";
+const REMOVE_USER_TRIP = "session/removeUserTrip ";
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -8,6 +10,16 @@ const setUser = (user) => ({
 
 const removeUser = () => ({
   type: REMOVE_USER
+});
+
+export const addUserTrip = (tripId) => ({
+  type: ADD_USER_TRIP,
+  payload: tripId
+});
+
+export const removeUserTrip = (tripId) => ({
+  type: REMOVE_USER_TRIP,
+  payload: tripId
 });
 
 export const thunkAuthenticate = () => async (dispatch) => {
@@ -71,6 +83,22 @@ function sessionReducer(state = initialState, action) {
       return { ...state, user: action.payload };
     case REMOVE_USER:
       return { ...state, user: null };
+    case ADD_USER_TRIP:
+      return {
+          ...state,
+          user: {
+              ...state.user,
+              tripIds: [...new Set([...state.user.tripIds, action.payload])]
+          }
+      };
+    case REMOVE_USER_TRIP:
+      return {
+          ...state,
+          user: {
+              ...state.user,
+              tripIds: state.user.tripIds.filter(id => id !== action.payload)
+          }
+      };
     default:
       return state;
   }
