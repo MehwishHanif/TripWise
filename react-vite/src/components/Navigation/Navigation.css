@@ -1,3 +1,56 @@
 .profile-dropdown {
   position: absolute;
 }
+
+.hidden{
+  display: none
+}
+
+.nav-wrapper{
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  border-bottom: 1px grey solid;
+  position: relative;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding-bottom: 20px;
+}
+
+.nav-actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  width: 50%
+}
+.nav-title{
+  width: 50%;
+  margin-left: 10px;
+  color: #b5264e;
+}
+
+.logo{
+  display: flex;
+  gap: 1px;
+  flex-direction: row;
+  font-size: x-large;
+font-weight: bold;
+}
+.nav-profile-btn{
+  margin-right: 10px;
+  margin-left: 40px; 
+  background-color: #b5264e;
+  padding: 4px;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  color:white;
+  border-radius: 6px;
+}
+
+.new-spot-link{
+  align-self: center;
+  color: #b5264e;
+}
