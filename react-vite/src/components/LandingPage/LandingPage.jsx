@@ -1,24 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import { useNavigate  } from 'react-router-dom';
-import { thunkGetUserTrips } from '../../redux/trips';
-import { useEffect } from 'react';
 import './LandingPage.css';
 import TripsIndex from '../TripsIndex';
 
-function LandingPage(){
-    // const navigate = useNavigate();
-    const dispatch = useDispatch();
+function LandingPage(){ 
     const sessionUser = useSelector(state => state.session.user);
-    console.log(sessionUser)
-
-    const trips = useSelector( (state) => Object.values(state.trips) || []);
-    console.log(trips)
-
+    // const navigate = useNavigate();
     // if(!sessionUser) navigate("login")
-
-    useEffect(() => {    
-        if( sessionUser)  dispatch(thunkGetUserTrips(sessionUser?.id))        
-    }, [dispatch, sessionUser]);
 
     return (
         <div className='landing-page'>
@@ -28,7 +16,7 @@ function LandingPage(){
                 <img src='https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg'/>
             </div>)}
             {sessionUser && (<div>
-                <TripsIndex />
+                <TripsIndex sessionUser={sessionUser} />
             </div>
             )}            
         </div>
