@@ -1,0 +1,59 @@
+.signup-form-modal {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 350px; /* Adjust width as needed */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-form-modal h1 {
+    font-size: 1.8em;
+    color: #29ABE2; /* Primary blue for heading */
+    margin-bottom: 20px;
+  }
+  
+  .signup-form-modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .signup-form-modal label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .signup-form-modal label input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 1em;
+  }
+  
+  .signup-form-modal p {
+    color: #d9534f; /* Red for error messages */
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: left;
+  }
+  
+  .signup-form-modal button[type="submit"] {
+    background-color: #FF9800; /* Secondary orange for button */
+    color: #ffffff;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-form-modal button[type="submit"]:hover {
+    background-color: #FB8C00; /* Darker orange on hover */
+  }

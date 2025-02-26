@@ -1,7 +1,124 @@
+.activity-section {
+    background-color: #f9f9f9;
+    /* Light background for activities */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 10px;
+    /* Space between trip details and activity section */
+    border: 1px solid #ddd;
+    /* Subtle border */
+}
+
+.activity-section button {
+    background-color: #4CAF50;
+    /* Accent green */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.activity-section button:hover {
+    background-color: #43A047;
+}
+
 .trip-activities {
     padding: 20px;
 }
 
+.daily-activities {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    /* Lighter border for daily activities */
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.activity-day {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 5px;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    /* Slightly darker background for activity items */
+}
+
+.activity-time {
+    width: 162px;
+    font-weight: 600;
+    color: #555;
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.activity-details {
+    flex-grow: 1;
+}
+
+.activity-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: #222;
+}
+
+.activity-location,
+.activity-category,
+.activity-notes {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 2px;
+}
+
+.activity-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.activity-actions div {
+    cursor: pointer;
+    font-size: 1.2em;
+    /* Adjust size of ellipsis */
+    color: #888;
+}
+
+.activity-actions-dropdown {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.activity-actions-dropdown li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.activity-actions-dropdown li:hover {
+    background-color: #f0f0f0;
+}
+
+/*
+.trip-activities {
+    padding: 20px;
+}
+ 
 .daily-activities {
     margin-bottom: 20px;
     border: 1px solid #ddd;
@@ -81,4 +198,4 @@
 .activity-actions li {
     cursor: pointer;
     padding: 5px 0px;
-}
+} */

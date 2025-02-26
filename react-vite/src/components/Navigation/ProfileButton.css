@@ -1,7 +1,6 @@
-.profile-dropdown {
+/* .profile-dropdown {
     border: 1px grey solid;
     border-radius: 5%;
-    /* background-color: #a9bacb; */
     background-color: #d9c7c7;
     display: flex ;
     flex-direction: column;
@@ -33,4 +32,74 @@
   cursor: pointer;  
   padding: 5px;
   font-size: 12px;
+} */
+
+.profile-dropdown {
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* White background */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  gap: 8px; /* Reduced gap for a tighter look */
+  padding: 12px; /* Reduced padding */
+  font-size: 0.9em; /* Slightly smaller font size */
+  color: #333; /* Dark gray text */
+  position: absolute;
+  z-index: 500;
+  right: 10px; /* Adjust right spacing */
+  top: 45px; /* Adjust top spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  list-style: none; /* Remove default list styles */
+}
+
+.profile-dropdown li {
+  padding: 5px 10px;
+  cursor: pointer;
+  width: 100%; /* Make list items take full width */
+  text-align: left; /* Align text to the left */
+}
+
+.profile-dropdown li:hover {
+  background-color: #f0f0f0; /* Light hover background */
+}
+
+.modal-item:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.logout-button {
+  background-color: #d9534f; /* Red for logout */
+  color: #ffffff; /* White text */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: none; /* Removed box shadow */
+  cursor: pointer;
+  padding: 8px 12px; /* Adjusted padding */
+  font-size: 0.9em; /* Consistent font size */
+  border: none;
+  width: 100%; /* Full width button */
+  text-align: center; /* Center text */
+}
+
+.logout-button:hover {
+  background-color: #c9302c; /* Darker red on hover */
+}
+
+/* Style for OpenModalMenuItem */
+.profile-dropdown .modal-button {
+  background-color: transparent; /* Transparent background */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #29ABE2; /* Primary blue color */
+  text-align: left;
+  width: 100%;
+}
+
+.profile-dropdown .modal-button:hover {
+  background-color: #f0f0f0; /* Light hover background */
 }

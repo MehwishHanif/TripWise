@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { thunkGetUserTrips } from '../../redux/trips';
+import { thunkGetAllTrips } from '../../redux/trips';
 import { useSelector, useDispatch } from 'react-redux';
 import TripIndexItem from '../TripIndexItem';
 import { useNavigate  } from 'react-router-dom';
 import { thunkGetAllActivities } from '../../redux/activities';
 import './TripsIndex.css';
+import { selectUserTrips } from '../../redux/trips';
 
 
 function TripsIndex({ sessionUser }){
@@ -12,14 +13,14 @@ function TripsIndex({ sessionUser }){
     const dispatch =  useDispatch();
     const [isUpcomingTripsActive, setIsUpcomingTripsActive] = useState(true);
     const [isPastTripsActive, setIsPastTripsActive] = useState(false);
-    const trips = useSelector( (state) => Object.values(state.trips) || []);
+    const trips = useSelector(selectUserTrips);//useSelector( (state) => Object.values(state.trips) || []);
     console.log(trips);
+    console.log(sessionUser);
 
-    useEffect(() => {    
-        if( sessionUser)  dispatch(thunkGetUserTrips(sessionUser?.id)) 
-        if( sessionUser)  dispatch(thunkGetAllActivities())
-
-    }, [dispatch, sessionUser]);
+    useEffect(() => {
+            dispatch(thunkGetAllTrips())
+            dispatch(thunkGetAllActivities())       
+    }, [dispatch]);
 
     const todayUTC = new Date().toISOString().split("T")[0];
     trips.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
@@ -32,9 +33,9 @@ function TripsIndex({ sessionUser }){
 
     return (
         <div className='trips-feed'>
-            <div>
+            <div className="tab-nav">
                 <button
-                  className="trips-button"
+                  className={`trips-button ${isUpcomingTripsActive ? 'active' : ''}`}
                   onClick={() => {
                     setIsUpcomingTripsActive(true);
                     setIsPastTripsActive(false);
@@ -43,7 +44,7 @@ function TripsIndex({ sessionUser }){
                 Upcomming Trips
                 </button>
                 <button
-                  className="trips-button"
+                  className={`trips-button ${isPastTripsActive ? 'active' : ''}`}
                   onClick={() => {
                     setIsPastTripsActive(true);
                     setIsUpcomingTripsActive(false);

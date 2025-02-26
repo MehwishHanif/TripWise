@@ -13,6 +13,7 @@ function ActivitySection({ tripId }){
   //  console.log(activities)
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
+  
   const [menuId, setMenuId] = useState("");
   const ulRef = useRef();
   const activities = useSelector((state) => selectTripActivities(state, parseInt(tripId)));

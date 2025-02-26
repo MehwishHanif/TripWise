@@ -1,11 +1,13 @@
-.trip-image img{
+/* .trip-image img {
     width: 200px;
-    height: 170px;    
+    height: 170px;
 }
-.trip-image{
+
+.trip-image {
     width: 30%;
 }
-.trip-info{
+
+.trip-info {
     padding: 10px;
     width: 70%;
     display: flex;
@@ -13,13 +15,99 @@
     box-sizing: border-box;
 }
 
-.trip-index-item{
+.trip-index-item {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.trip-info h2{
- font-size: large;
- cursor: pointer;
+.trip-info h2 {
+    font-size: large;
+    cursor: pointer;
+} */
+
+.trip-index-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    /* Card background */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    /* Prevents image overflow */
+    padding: 15px;
+}
+
+.trip-info {
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+.trip-info h2 {
+    font-size: 1.5em;
+    color: #333333;
+    margin-bottom: 5px;
+    cursor: pointer;
+    /* Indicate clickable heading */
+}
+
+.trip-info span {
+    display: block;
+    color: #777777;
+    margin-bottom: 5px;
+}
+
+.trip-image {
+    width: 200px;
+    /* Adjust as needed */
+    height: 150px;
+    /* adjust as needed */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.trip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image fills container */
+}
+
+/* Button Styles */
+.trip-info button,
+.trip-info .modal-button {
+    background-color: #29ABE2;
+    color: #ffffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.trip-info button:hover,
+.trip-info .modal-button:hover {
+    background-color: #FF9800;
+}
+.trip-info .modal-button {
+    background-color: #FF9800; /* Secondary orange */
+}
+.trip-info .cancel-button {
+    background-color: #E0E0E0;
+    color: #333;
+}
+
+.trip-info .cancel-button:hover {
+    background-color: #BDBDBD;
+}
+
+/* Modal Button Styles */
+.trip-info .modal-button {
+    background-color: #FF9800;
+}
+
+.trip-info .modal-button:hover {
+    background-color: #FB8C00;
 }

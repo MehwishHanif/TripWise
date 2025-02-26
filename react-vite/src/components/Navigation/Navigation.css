@@ -1,4 +1,4 @@
-.profile-dropdown {
+/* .profile-dropdown {
   position: absolute;
 }
 
@@ -53,4 +53,61 @@ font-weight: bold;
 .new-spot-link{
   align-self: center;
   color: #b5264e;
+} */
+
+.nav-wrapper {
+  display: flex;
+  height: 60px; /* Increased height for better spacing */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%; /* Adjusted padding for consistent margins */
+  border-bottom: 1px solid #ddd; /* Light border */
+  position: relative;
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: #ffffff; /* White background for navbar */
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center; /* Center items vertically */
+}
+
+.nav-title {
+  color: #29ABE2; /* Primary blue for logo/title */
+  font-size: 1.8em; /* Increased font size for title */
+  font-weight: 600; /* Semi-bold font weight */
+}
+
+.logo {
+  text-decoration: none; /* Remove underline from NavLink */
+  color: inherit; /* Inherit color from nav-title */
+}
+
+.nav-profile-btn {
+  background-color: transparent; /* Transparent background for profile button */
+  border: none;
+  padding: 8px 12px; /* Adjusted padding */
+  cursor: pointer;
+  color: #333; /* Dark gray text */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-profile-btn:hover {
+  background-color: #f0f0f0; /* Light gray hover background */
+}
+
+.new-spot-link {
+  align-self: center;
+  color: #29ABE2; /* Primary blue for link */
+  text-decoration: none; /* Remove underline */
+}
+
+.new-spot-link:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+  display: none;
 }

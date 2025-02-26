@@ -1,3 +1,8 @@
 .trip-show{
     margin: 10px 12%;
+    /* max-width: 900px; */
+}
+
+.trip-details {
+    margin-bottom: 20px;
 }

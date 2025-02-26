@@ -1,4 +1,4 @@
-.call-to-action img{
+/* .call-to-action img{
     width: 300px;
     height: 250px;
 }
@@ -8,4 +8,75 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
+} */
+.landing-page {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    min-height: calc(100vh - 60px);
+    /* Adjust for navbar height */
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #E0F2F7, #F4F4F4);
+}
+
+.call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* Increased gap for better spacing */
+    max-width: 800px;
+    /* Limit content width */
+}
+
+.call-to-action h1 {
+    font-size: 2.5em;
+    color: #29ABE2;
+    /* Primary blue for heading */
+    margin-bottom: 10px;
+}
+
+.call-to-action h2 {
+    font-size: 1.2em;
+    color: #777;
+    line-height: 1.6;
+}
+
+.call-to-action img {
+    width: 400px;
+    /* Increased image size */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-buttons button{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #FF9800;
+    /* Secondary orange for signup */
+    color: #ffffff;
+}
+
+.cta-buttons button:first-child {
+    background-color: #29ABE2;
+    /* Primary blue for login */
+    color: #ffffff;
+}
+
+
+
+.cta-buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }

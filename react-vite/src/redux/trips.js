@@ -1,4 +1,5 @@
 import { addUserTrip, removeUserTrip } from "./session";
+import { createSelector } from 'reselect';
 
 const LOAD_TRIPS = "trips/LOAD_TRIPS";
 const ADD_TRIP = "trips/ADD_TRIP";
@@ -52,6 +53,20 @@ export const thunkGetUserTrips = (userId) => async (dispatch) => {
   }
 };
 
+export const thunkGetAllTrips = () => async (dispatch) => {
+  const response = await fetch(`/api/trips`);
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(loadTrips(data.trips));
+    return data.trips;
+  } else {
+    const errors = await response.json();
+    return errors;
+  }
+};
+
+
 export const thunkCreateTrip = (tripData) => async (dispatch) => {
   const response = await fetch("/api/trips", {
     method: "POST",
@@ -101,6 +116,19 @@ export const thunkDeleteTrip = (tripId) => async (dispatch) => {
     return errors;
   }
 };
+
+/*-------------------------- Selectors --------------------------- */
+const getTrips = (state) => state.trips;
+
+const getUserTripIds = (state) => state.session.user?.tripIds || [];
+
+// Memoized selector for User Trips
+export const selectUserTrips = createSelector(
+  [getTrips, getUserTripIds],
+  (trips, userTripIds) => {
+    return Object.values(trips).filter(trip => userTripIds.includes(trip.id));
+  }
+);
 
 const tripReducer = (state = {}, action) => {
   switch (action.type) {
