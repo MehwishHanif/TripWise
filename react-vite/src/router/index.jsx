@@ -6,6 +6,8 @@ import LandingPage from '../components/LandingPage';
 import TripShow from '../components/TripShow';
 import CreateTripForm from '../components/TripForm/CreateTripForm';
 import EditTripForm from '../components/TripForm/EditTripForm';
+import CreateActivityForm from '../components/ActivityForm/CreateActivityForm';
+import EditActivityForm from '../components/ActivityForm/EditActivityForm';
 
 export const router = createBrowserRouter([
   
@@ -43,6 +45,14 @@ export const router = createBrowserRouter([
       {
         path: "trips/new",
         element: <CreateTripForm />,
+      },
+      {
+        path: "trips/:tripId/activities/new",
+        element: <CreateActivityForm />,
+      },
+      {
+        path: "activities/:activityId/edit",
+        element: <EditActivityForm />,
       },
     ],
   },

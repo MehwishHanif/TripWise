@@ -1,4 +1,5 @@
 import { addTripActivity, removeTripActivity } from "./trips";
+import { createSelector } from 'reselect';
 
 const LOAD_ACTIVITIES = "activities/LOAD_ACTIVITIES";
 const ADD_ACTIVITY = "activities/ADD_ACTIVITY";
@@ -31,7 +32,8 @@ export const thunkGetAllActivities = () => async (dispatch) => {
 
   if (response.ok) {
     const data = await response.json();
-    dispatch(loadActivities(data.activities));
+    
+    await dispatch(loadActivities(data.activities));
     return data.activities;
   } else {
     const errors = await response.json();
@@ -50,7 +52,7 @@ export const thunkCreateActivity =
     if (response.ok) {
       const newActivity = await response.json();
       dispatch(addActivity(newActivity));
-      dispatch(addTripActivity(newActivity.id, tripId));
+      dispatch(addTripActivity(parseInt(newActivity.id), parseInt(tripId)));
       return newActivity;
     } else {
       const errors = await response.json();
@@ -82,14 +84,30 @@ export const thunkDeleteActivity = (activityId, tripId) => async (dispatch) => {
   });
 
   if (response.ok) {
-    dispatch(deleteActivity(activityId, tripId));
-    dispatch(removeTripActivity(activityId, tripId));
+    await dispatch(deleteActivity(parseInt(activityId), parseInt(tripId)));
+    await dispatch(removeTripActivity(parseInt(activityId), parseInt(tripId)));
     return true;
   } else {
     const errors = await response.json();
     return errors;
   }
 };
+
+/*-------------------------- Selectors --------------------------- */
+const getActivities = (state) => state.activities;
+
+const getTripAcitivityIds = (state, tripId) => {
+  const trip = state.trips[tripId]
+  return trip ? trip.activityIds : []
+}
+
+// Memoized selector for Trip activities
+export const selectTripActivities = createSelector(
+  [getActivities, getTripAcitivityIds],
+  (activities, tripActivityIds) => {
+    return Object.values(activities).filter(activity => tripActivityIds.includes(activity.id));
+  }
+);
 
 const activityReducer = (state = {}, action) => {
   switch (action.type) {

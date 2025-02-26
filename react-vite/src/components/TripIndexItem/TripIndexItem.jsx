@@ -9,7 +9,7 @@ function TripIndexItem({ trip, indexType, pageType }){
     const end = new Date(trip?.endDate);        
     const tripDuration = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
        
-    const options = { month: "short", day: "numeric", timeZone: "UTC", };
+    const options = { month: "short", day: "numeric", timeZone: "UTC" };
     const startFormatted = start.toLocaleDateString("en-US", options);
     const endFormatted = end.toLocaleDateString("en-US", options);
     const startYear = start.getUTCFullYear();
@@ -42,7 +42,7 @@ function TripIndexItem({ trip, indexType, pageType }){
                     buttonText="Delete Trip" 
                     modalComponent={<DeleteTripModal  tripId={trip?.id} />}
                   />
-                {indexType ==="upcoming" &&( <button onClick={handleUpdate}> Edit ( TO DO )</button>)}
+                {indexType ==="upcoming" &&( <button onClick={handleUpdate}> Edit Trip</button>)}
             </div>)}
             </div>
             <div className="trip-image">

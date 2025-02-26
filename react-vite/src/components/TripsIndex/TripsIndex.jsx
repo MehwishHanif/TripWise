@@ -3,6 +3,7 @@ import { thunkGetUserTrips } from '../../redux/trips';
 import { useSelector, useDispatch } from 'react-redux';
 import TripIndexItem from '../TripIndexItem';
 import { useNavigate  } from 'react-router-dom';
+import { thunkGetAllActivities } from '../../redux/activities';
 import './TripsIndex.css';
 
 
@@ -15,7 +16,9 @@ function TripsIndex({ sessionUser }){
     console.log(trips);
 
     useEffect(() => {    
-        if( sessionUser)  dispatch(thunkGetUserTrips(sessionUser?.id))        
+        if( sessionUser)  dispatch(thunkGetUserTrips(sessionUser?.id)) 
+        if( sessionUser)  dispatch(thunkGetAllActivities())
+
     }, [dispatch, sessionUser]);
 
     const todayUTC = new Date().toISOString().split("T")[0];

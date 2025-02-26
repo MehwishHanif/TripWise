@@ -2,6 +2,7 @@ import './TripShow.css';
 import { useParams } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import TripIndexItem from '../TripIndexItem';
+import ActivitySection from '../ActivitySection';
 
 function TripShow(){
     const { tripId } = useParams();
@@ -18,6 +19,9 @@ function TripShow(){
             <div className='trip-details'>
                 <TripIndexItem trip={trip} indexType={indexType} pageType="tripShow"/>
             </div>
+            <div>
+                <ActivitySection tripId={tripId} indexType={indexType}/>
+            </div>            
         </div>
     )
 }

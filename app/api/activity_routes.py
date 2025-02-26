@@ -12,8 +12,9 @@ def get_all_activities():
     """
     Query for all activites and returns them in a list of activity dictionaries
     """
+    print("GET ACTIVITIES")
     activities = Activity.query.all()
-    return {'activites': [activity.to_dict() for activity in activities]}
+    return {'activities': [activity.to_dict() for activity in activities]}
 
 
 @activity_routes.route('/<int:activity_id>')
