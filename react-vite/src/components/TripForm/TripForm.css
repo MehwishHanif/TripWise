@@ -5,6 +5,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e0f2f7;
 }
 
 .trip-form h2 {
@@ -49,6 +50,7 @@ textarea {
     font-size: 1em;
     /* Adjusted font size */
     transition: border-color 0.3s ease;
+    background-color: white;
     /* Added transition */
 }
 
@@ -66,6 +68,7 @@ textarea:focus {
     min-height: 120px;
     /* Adjusted min height */
     border: 1px solid #ddd;
+    background-color: white;
 }
 
 .form-actions {

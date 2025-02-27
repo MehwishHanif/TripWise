@@ -1,75 +1,52 @@
-/* .trips-index{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.trips-feed{
-    margin: 10px 20%;
-}
-
-.trips-button{
-    padding: 7px;
-    border: 1px solid grey;
-    text-align: center;
-    width: 180px;
-    box-sizing: border-box;
-} */
 .trips-feed {
-    width: 500px;
-    /* Adjust as needed */
-    /* margin: 20px 20%; */
-    padding: 20px;
+  width: 600px;
+  padding: 20px;
 }
 
-/* .trips-feed div:first-child {
-    margin-bottom: 20px;
-    text-align: center;
-} */
- 
-.trips-feed .tab-nav { /* Style the navigation tab container */
-    display: flex; /* Use flexbox for horizontal layout */
-    border-bottom: 2px solid #ddd; /* Add a bottom border */
-    margin-bottom: 20px;
-  }
-  
-  .tab-nav .trips-button {
-    background-color: transparent; /* Transparent background */
-    color: #333;
-    padding: 10px 20px;
-    border: none;
-    border-bottom: 2px solid transparent; /* Transparent bottom border initially */
-    cursor: pointer;
-    font-size: 1em;
-    transition: border-bottom 0.3s ease; /* Smooth transition for border */
-  }
-  
-  .tab-nav .trips-button:hover {
-    background-color: #f0f0f0; /* Light hover background */
-  }
-  
-  .tab-nav .trips-button.active {
-    color: #29ABE2; /* Primary blue for active tab */
-    border-bottom: 2px solid #29ABE2; /* Solid blue border for active tab */
-  }
-  
-  .trips-index {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  
-  .trips-index button {
-    background-color: #4CAF50;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-  
-  .trips-index button:hover {
-    background-color: #43A047;
-  }
+
+.trips-feed .tab-nav {
+  display: flex;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.tab-nav .trips-button {
+  background-color: transparent;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1em;
+  transition: border-bottom 0.3s ease;
+}
+
+.tab-nav .trips-button:hover {
+  background-color: #f0f0f0;
+}
+
+.tab-nav .trips-button.active {
+  color: #29ABE2;
+  border-bottom: 2px solid #29ABE2;
+}
+
+.trips-index {
+  background-color: #E0F2F7;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.trips-index button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.trips-index button:hover {
+  background-color: #43A047;
+}

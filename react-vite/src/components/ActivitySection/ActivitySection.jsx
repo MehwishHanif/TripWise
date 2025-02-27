@@ -5,19 +5,17 @@ import { useEffect, useState, useRef } from "react";
 import { selectTripActivities } from '../../redux/activities';
 import OpenModalMenuItem from '../Navigation/OpenModalMenuItem';
 import DeleteActivityModal from '../DeleteActivityModal';
+import { BsThreeDots } from "react-icons/bs";
 
-function ActivitySection({ tripId }){   
-    // const trip = useSelector( (state) => state.trips[parseInt(tripId)] || []);
-    // const tripActivityIds = useSelector( (state) => state.trips[parseInt(tripId)]?.activityIds || []);
-   // const activities = useSelector( (state) => Object.values(state.trips) || []);
-  //  console.log(activities)
+function ActivitySection({ tripId, indexType }){   
+   
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   
   const [menuId, setMenuId] = useState("");
   const ulRef = useRef();
   const activities = useSelector((state) => selectTripActivities(state, parseInt(tripId)));
-    console.log("Activities: ",activities)
+  
     useEffect(() => {
         const closeMenu = (e) => {
           if (ulRef.current && !ulRef.current.contains(e.target)) {
@@ -46,13 +44,21 @@ function ActivitySection({ tripId }){
     const groupActivitiesByDate = (activities) => {
         const grouped = {};
         activities.forEach((activity) => {
-            // console.log(formatDate(activity.startTime))
+         
           const date = formatDate(activity.startTime);
           if (!grouped[date]) {
             grouped[date] = [];
           }
           grouped[date].push(activity);
         });
+
+        for (const date in grouped) {
+          grouped[date].sort((a, b) => {
+            return new Date(a.startTime) - new Date(b.startTime);
+          });
+        }
+        
+
         return grouped;
     };
 
@@ -64,7 +70,7 @@ function ActivitySection({ tripId }){
 
     return (
     <div className='activity-section'>
-        <div>
+        <div className='add-activity-btn'>
             <button onClick={handleAddTripActivity}> Add an Activity</button>
         </div>
         <div className="trip-activities">
@@ -84,28 +90,29 @@ function ActivitySection({ tripId }){
                   </div>
                   <div className="activity-actions">
                     <div
+                        className="toggle-menu"
                         onClick={(e) => {
-                            e.stopPropagation()
-                        console.log("clicked")
+                            e.stopPropagation();
                         setShowMenu(!showMenu);
                         setMenuId(activity?.id);
                         }}>
-                        . . .
+                       <BsThreeDots />
                     </div>
                     {showMenu && menuId === activity?.id && (
                         <ul className={"activity-actions-dropdown"} ref={ulRef}>
                             <OpenModalMenuItem 
                                 itemText="Delete Activity" 
+                                onItemClick={closeMenu}
                                 modalComponent={<DeleteActivityModal  tripId={tripId} activityId={activity?.id} />}
                             />                      
-                            <li
+                            {indexType === "upcoming" && (<li
                                 onClick={ () => {
                                         navigate(`/activities/${activity?.id}/edit`)
                                         closeMenu();
                                     }}
                                 >
                                 Update Activity
-                            </li> 
+                            </li> )}
                         </ul>
                     )}
                     

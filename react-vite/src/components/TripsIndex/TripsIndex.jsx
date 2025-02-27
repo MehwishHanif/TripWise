@@ -8,15 +8,13 @@ import './TripsIndex.css';
 import { selectUserTrips } from '../../redux/trips';
 
 
-function TripsIndex({ sessionUser }){
+function TripsIndex(){
     const navigate = useNavigate();
     const dispatch =  useDispatch();
     const [isUpcomingTripsActive, setIsUpcomingTripsActive] = useState(true);
     const [isPastTripsActive, setIsPastTripsActive] = useState(false);
     const trips = useSelector(selectUserTrips);//useSelector( (state) => Object.values(state.trips) || []);
-    console.log(trips);
-    console.log(sessionUser);
-
+   
     useEffect(() => {
             dispatch(thunkGetAllTrips())
             dispatch(thunkGetAllActivities())       

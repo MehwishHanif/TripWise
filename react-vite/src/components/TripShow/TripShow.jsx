@@ -7,7 +7,7 @@ import ActivitySection from '../ActivitySection';
 function TripShow(){
     const { tripId } = useParams();
     const trip = useSelector( (state) => state.trips[parseInt(tripId)] || []);
-    console.log(trip)
+    
 
     const todayUTC = new Date().toISOString().split("T")[0];
     let indexType;

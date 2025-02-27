@@ -1,10 +1,30 @@
 import './TripIndexItem.css';
 import { useNavigate  } from 'react-router-dom';
-import OpenModalButton from '../OpenModalButton';
+// import OpenModalButton from '../OpenModalButton';
+import OpenModalMenuItem from '../Navigation/OpenModalMenuItem';
 import DeleteTripModal from '../DeleteTripModal';
+import { BsThreeDots } from "react-icons/bs";
+import { useEffect, useState, useRef } from "react";
 
 function TripIndexItem({ trip, indexType, pageType }){
     const navigate = useNavigate();
+    const [showMenu, setShowMenu] = useState(false);
+    // const [menuId, setMenuId] = useState("");
+    const ulRef = useRef();
+
+    useEffect(() => {
+        const closeMenu = (e) => {
+          if (ulRef.current && !ulRef.current.contains(e.target)) {
+            setShowMenu(false);
+          }
+        };
+    
+        document.addEventListener("click", closeMenu);
+    
+        return () => document.removeEventListener("click", closeMenu);
+    }, []);
+
+    const closeMenu = () => setShowMenu(false);
     const start = new Date(trip?.startDate);
     const end = new Date(trip?.endDate);        
     const tripDuration = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
@@ -29,7 +49,13 @@ function TripIndexItem({ trip, indexType, pageType }){
     const handleUpdate = (e) => {
         e.preventDefault();
         navigate(`/trips/${trip?.id}/edit`);
+        closeMenu();
     }
+
+    const toggleMenu = (e) => {
+        e.stopPropagation()
+        setShowMenu(!showMenu);
+    };
 
     return (
         <div className="trip-index-item">
@@ -37,12 +63,21 @@ function TripIndexItem({ trip, indexType, pageType }){
                 <h2 onClick={handleTripShow}>{trip?.name}</h2>
                 <span>{trip?.destination}</span>
                 <span>{`${tripDates} (${tripDuration} days)`}</span>
-            {pageType === "tripShow" && (<div>
-                <OpenModalButton 
-                    buttonText="Delete Trip" 
-                    modalComponent={<DeleteTripModal  tripId={trip?.id} />}
-                  />
-                {indexType ==="upcoming" &&( <button onClick={handleUpdate}> Edit Trip</button>)}
+            {pageType === "tripShow" && (
+            <div className='tripshow-action'>
+                <div  className="toggle-menu" onClick={toggleMenu}>
+                        <BsThreeDots />
+                </div>
+                {showMenu  && (
+                    <ul className={"tripshow-action-dropdown"} ref={ulRef}>
+                        <OpenModalMenuItem 
+                            itemText="Delete Trip"
+                            onItemClick={closeMenu} 
+                            modalComponent={<DeleteTripModal  tripId={trip?.id} />}
+                        />
+                        {indexType ==="upcoming" &&( <li onClick={handleUpdate}> Update Trip</li>)}
+                    </ul>
+                )}
             </div>)}
             </div>
             <div className="trip-image">

@@ -23,7 +23,7 @@ function DeleteTripModal({tripId}){
     return(
         <div className="delete-trip-modal" >
             <h1>Confirm Delete</h1>
-            <p>Are you sure you want to delete this trip?</p>
+            <p> Deleting this trip will remove all its activities and data. Are you sure you want to delete this trip?</p>
             <button className="delete-trip" 
                 onClick={handleDelete}
              >Yes (Delete Trip)</button>

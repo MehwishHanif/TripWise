@@ -60,12 +60,11 @@ font-weight: bold;
   height: 60px; /* Increased height for better spacing */
   justify-content: space-between;
   align-items: center;
-  padding: 0 3%; /* Adjusted padding for consistent margins */
+  padding: 0 6%; /* Adjusted padding for consistent margins */
   border-bottom: 1px solid #ddd; /* Light border */
   position: relative;
-  margin-left: 3%;
-  margin-right: 3%;
-  background-color: #ffffff; /* White background for navbar */
+  
+  background-color: #E0F2F7;
 }
 
 .nav-actions {
