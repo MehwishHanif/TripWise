@@ -7,6 +7,7 @@ function CreateTripForm(){
         destination: '',
         startDate: '',
         endDate: '',
+        imageUrl: "https://images.pexels.com/photos/21014/pexels-photo.jpg"
     }
     
     return (

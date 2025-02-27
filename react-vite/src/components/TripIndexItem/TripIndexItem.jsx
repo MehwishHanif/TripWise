@@ -46,7 +46,7 @@ function TripIndexItem({ trip, indexType, pageType }){
             </div>)}
             </div>
             <div className="trip-image">
-                <img src='https://images.pexels.com/photos/163185/old-retro-antique-vintage-163185.jpeg'/>
+                <img src={trip?.imageUrl} />
             </div>
         </div>
     )

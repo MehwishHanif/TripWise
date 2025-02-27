@@ -14,6 +14,7 @@ class Trip(db.Model):
     start_date = db.Column(db.Date, nullable=False)
     end_date = db.Column(db.Date, nullable=False)
     description = db.Column(db.String(500))
+    image_url = db.Column(db.String(2083))
     is_private = db.Column(db.Boolean, default=True)  # Default is a private trip
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
@@ -29,6 +30,7 @@ class Trip(db.Model):
             'userId': self.user_id,
             'destination': self.destination,
             'description': self.description,
+            'imageUrl': self.image_url,
             'startDate': self.start_date.isoformat() if self.start_date else None,
             'endDate': self.end_date.isoformat() if self.end_date else None,
             'isPrivate': self.is_private,

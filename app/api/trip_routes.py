@@ -57,6 +57,7 @@ def create_trip():
             name=form.name.data,
             destination=form.destination.data,
             description=form.description.data,
+            image_url=form.image_url.data,
             start_date=form.start_date.data,
             end_date=form.end_date.data,
             is_private=form.is_private.data,
@@ -91,6 +92,7 @@ def update_trip(trip_id):
         trip.name = form.name.data
         trip.destination = form.destination.data
         trip.description = form.description.data
+        trip.image_url= form.image_url.data
         trip.start_date = form.start_date.data
         trip.end_date = form.end_date.data
         trip.is_private = form.is_private.data

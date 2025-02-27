@@ -16,6 +16,7 @@ class TripForm(FlaskForm):
     name = StringField("Trip Name", validators=[DataRequired(), Length(max=100)])
     destination = StringField("Destination", validators=[DataRequired(), Length(max=255)])
     description = TextAreaField("Description", validators=[Length(max=500)]) # Match model
+    image_url = StringField("Image URL")
     start_date = DateField("Start Date", format="%Y-%m-%d", validators=[DataRequired()])
     end_date = DateField("End Date", format="%Y-%m-%d", validators=[DataRequired(), end_date_after_start_date]) # Added custom validator
     is_private = BooleanField("Is Private")

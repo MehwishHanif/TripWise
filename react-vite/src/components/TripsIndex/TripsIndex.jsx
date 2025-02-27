@@ -25,7 +25,11 @@ function TripsIndex({ sessionUser }){
     const todayUTC = new Date().toISOString().split("T")[0];
     trips.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
     const pastTrips = trips.filter(trip => trip.endDate.split("T")[0] < todayUTC);
-    const upcomingTrips = trips.filter(trip => trip.endDate.split("T")[0] >= todayUTC);    
+    const upcomingTrips = trips.filter(trip => trip.endDate.split("T")[0] >= todayUTC).sort((a, b) => {
+        const dateA = new Date(a.endDate.split("T")[0]);
+        const dateB = new Date(b.endDate.split("T")[0]);
+        return dateA - dateB; 
+    });    
 
     const handleAddTrip = () =>{
         navigate(`/trips/new`)
