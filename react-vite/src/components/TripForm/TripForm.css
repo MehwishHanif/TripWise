@@ -1,0 +1,151 @@
+.trip-form {
+    max-width: 600px;
+    margin: 20px 20%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trip-form h2 {
+    padding-bottom: 24px;
+    text-align: center;
+    font-size: 1.8em;
+    /* Adjusted font size */
+    color: #29ABE2;
+    /* Primary blue for heading */
+}
+
+.add-trip-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    /* Increased margin */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    /* Adjusted margin */
+    font-weight: 600;
+    /* Adjusted font weight */
+    color: #333;
+    /* Dark gray text */
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    /* Adjusted padding */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    /* Adjusted border radius */
+    box-sizing: border-box;
+    font-size: 1em;
+    /* Adjusted font size */
+    transition: border-color 0.3s ease;
+    /* Added transition */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #29ABE2;
+    /* Primary blue on focus */
+    outline: none;
+    /* Remove default outline */
+}
+
+#description {
+    resize: vertical;
+    min-height: 120px;
+    /* Adjusted min height */
+    border: 1px solid #ddd;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    /* Adjusted margin */
+}
+
+.submit-button,
+.cancel-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    /* Adjusted font size */
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    /* Added transition */
+}
+
+.submit-button {
+    background-color: #29ABE2;
+    /* Primary blue */
+    color: white;
+}
+.trip-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit-button:hover {
+    background-color: #1E88E5;
+    /* Darker blue on hover */
+}
+
+.cancel-button {
+    background-color: #e0e0e0;
+    /* Light gray */
+    color: #333;
+}
+
+.cancel-button:hover {
+    background-color: #bdbdbd;
+    /* Darker gray on hover */
+}
+
+.error {
+    color: #d9534f;
+    /* Red for errors */
+    font-size: 0.9em;
+    /* Adjusted font size */
+    margin-top: 5px;
+}
+
+/* Image Selection Styles */
+.trip-form img {
+    width: 200px; /* Fixed width */
+  height: 150px; /* Fixed height */
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.img-change-btn {
+    background-color: #4CAF50;
+    /* Accent green for change image button */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.img-change-btn:hover {
+    background-color: #43A047;
+    /* Darker green on hover */
+}

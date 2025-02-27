@@ -76,5 +76,118 @@ activities_data = [
         'start_time': datetime.fromisoformat( '2025-03-07T14:00:00').replace(tzinfo=timezone.utc),
         'end_time': datetime.fromisoformat( '2025-03-07T16:00:00').replace(tzinfo=timezone.utc),
         'notes': 'Pre-book tickets.'
+    },
+     # New York City Tour (May 10 - May 15, 2025)
+    {
+        'trip_id': 6,
+        'name': 'Statue of Liberty & Ellis Island Tour',
+        'category': 'Sightseeing',
+        'location': 'Liberty Island',
+        'start_time': datetime.fromisoformat('2025-05-11T09:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-05-11T12:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Book ferry tickets in advance.'
+    },
+    {
+        'trip_id': 6,
+        'name': 'Broadway Show - The Lion King',
+        'category': 'Entertainment',
+        'location': 'Minskoff Theatre',
+        'start_time': datetime.fromisoformat('2025-05-11T19:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-05-11T22:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Arrive 30 minutes early.'
+    },
+    {
+        'trip_id': 6,
+        'name': 'Central Park Bike Ride',
+        'category': 'Outdoor',
+        'location': 'Central Park',
+        'start_time': datetime.fromisoformat('2025-05-12T10:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-05-12T12:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Rent bikes near the entrance.'
+    },
+    {
+        'trip_id': 6,
+        'name': 'Metropolitan Museum of Art Tour',
+        'category': 'Culture',
+        'location': 'The Met',
+        'start_time': datetime.fromisoformat('2025-05-12T13:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-05-12T16:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Self-guided audio tour available.'
+    },
+    {
+        'trip_id': 6,
+        'name': 'Empire State Building Night View',
+        'category': 'Sightseeing',
+        'location': 'Empire State Building',
+        'start_time': datetime.fromisoformat('2025-05-14T20:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-05-14T22:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Great for night city views.'
+    },
+    {
+        'trip_id': 6,
+        'name': 'Food Tour in Little Italy & Chinatown',
+        'category': 'Dining',
+        'location': 'Little Italy & Chinatown',
+        'start_time': datetime.fromisoformat('2025-05-15T12:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-05-15T15:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Try dumplings and cannoli.'
+    },
+
+    # Alaskan Adventure (Sept 5 - Sept 15, 2025)
+    {
+        'trip_id': 7,
+        'name': 'Glacier Hike & Ice Climbing',
+        'category': 'Adventure',
+        'location': 'Matanuska Glacier',
+        'start_time': datetime.fromisoformat('2025-09-06T08:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-09-06T14:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Wear waterproof gear.'
+    },
+    {
+        'trip_id': 7,
+        'name': 'Northern Lights Viewing',
+        'category': 'Sightseeing',
+        'location': 'Fairbanks, Alaska',
+        'start_time': datetime.fromisoformat('2025-09-09T22:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-09-09T23:59:00').replace(tzinfo=timezone.utc),
+        'notes': 'Check aurora forecast.'
+    },
+    {
+        'trip_id': 7,
+        'name': 'Dog Sledding Adventure',
+        'category': 'Outdoor',
+        'location': 'Denali National Park',
+        'start_time': datetime.fromisoformat('2025-09-12T10:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2025-09-12T13:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Meet champion sled dogs.'
+    },
+
+    # Bali Retreat (April 10 - April 20, 2026)
+    {
+        'trip_id': 8,
+        'name': 'Sunrise Hike at Mount Batur',
+        'category': 'Adventure',
+        'location': 'Mount Batur',
+        'start_time': datetime.fromisoformat('2026-04-11T03:30:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2026-04-11T08:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Bring warm clothes and a flashlight.'
+    },
+    {
+        'trip_id': 8,
+        'name': 'Balinese Cooking Class',
+        'category': 'Dining',
+        'location': 'Ubud',
+        'start_time': datetime.fromisoformat('2026-04-13T10:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2026-04-13T13:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Learn to make traditional dishes.'
+    },
+    {
+        'trip_id': 8,
+        'name': 'Uluwatu Temple & Kecak Fire Dance',
+        'category': 'Culture',
+        'location': 'Uluwatu',
+        'start_time': datetime.fromisoformat('2026-04-17T17:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2026-04-17T19:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Arrive early for sunset views.'
     }
 ]

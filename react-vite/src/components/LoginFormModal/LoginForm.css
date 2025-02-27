@@ -1,0 +1,79 @@
+.login-form-modal {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 350px;
+    /* Adjust width as needed */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-form-modal h1 {
+    font-size: 1.8em;
+    color: #29ABE2;
+    /* Primary blue for heading */
+    margin-bottom: 20px;
+}
+
+.login-form-modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.login-form-modal label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.login-form-modal label input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.login-form-modal p {
+    color: #d9534f;
+    /* Red for error messages */
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.login-form-modal button[type="submit"] {
+    background-color: #29ABE2;
+    /* Primary blue for button */
+    color: #ffffff;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.login-form-modal button[type="submit"]:hover {
+    background-color: #1E88E5;
+    /* Darker blue on hover */
+}
+
+.demo-user-login {
+    display: block;
+    margin-top: 15px;
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.demo-user-login:hover {
+    color: #29ABE2;
+    /* Primary blue on hover */
+    text-decoration: underline;
+}
