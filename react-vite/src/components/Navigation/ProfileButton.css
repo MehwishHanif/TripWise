@@ -56,7 +56,6 @@
 .profile-dropdown li {
   padding: 5px 10px;
   cursor: pointer;
-  width: 100%; /* Make list items take full width */
   text-align: left; /* Align text to the left */
 }
 

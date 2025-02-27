@@ -95,9 +95,9 @@ function TripForm({ trip, formType }) {
         is_private: true,
         image_url: selectedImage
      };
-     console.log("TRIP ID ",tripData)
+     
       let result = await dispatch(
-        formType === "create" ? thunkCreateTrip(tripData) : thunkUpdateTrip(trip.id,tripData)
+        formType === "create" ? thunkCreateTrip(tripData) : thunkUpdateTrip(trip?.id,tripData)
       );
 
       if (result && result.id) {
@@ -112,7 +112,8 @@ function TripForm({ trip, formType }) {
 
   const onCancel = (e) => {
     e.preventDefault();
-    navigate("/");
+    if (formType === "create") navigate("/");
+    else navigate(`/trips/${trip?.id}`)
   }
 
   const handleImageChange = () => {

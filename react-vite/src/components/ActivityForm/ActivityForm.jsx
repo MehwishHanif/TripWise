@@ -39,7 +39,7 @@ function ActivityForm({ activity, formType }) {
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [errors, setErrors] = useState({});
 
-  console.log(trip)
+ 
   
   useEffect(() => {    
     const newErrors = {};
@@ -109,7 +109,7 @@ function ActivityForm({ activity, formType }) {
         notes,
       };
       
-      console.log(`${startDate}T${startTime}`)
+      
       let result = await dispatch(
             formType === "create" ? thunkCreateActivity(activity?.tripId, newActivity) : thunkUpdateActivity(activity?.id, newActivity)
         );
@@ -119,7 +119,7 @@ function ActivityForm({ activity, formType }) {
             navigate(`/trips/${activity.tripId}`);
         } else {
             setHasSubmitted(true);
-            console.log(result.errors)
+            
             setErrors(result.errors);
         }
       
@@ -136,7 +136,7 @@ function ActivityForm({ activity, formType }) {
       <h2>{formType==="create"? "Add new Activity" : "Update Activity"}</h2>
       <form onSubmit={handleSubmit} className="activity-form">
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             id="name"
@@ -147,7 +147,7 @@ function ActivityForm({ activity, formType }) {
         </div>
 
         <div className="form-group">
-          <label htmlFor="location">Location:</label>
+          <label htmlFor="location">Location</label>
           <input
             type="text"
             id="location"
@@ -158,7 +158,7 @@ function ActivityForm({ activity, formType }) {
         </div>
 
         <div className="form-group">
-          <label htmlFor="category">Category:</label>
+          <label htmlFor="category">Category</label>
           <select
             id="category"
             value={category}
@@ -173,7 +173,7 @@ function ActivityForm({ activity, formType }) {
         </div>
 
         <div className="form-group date-time-group">
-          <label>Start Date and Time:</label>
+          <label>Start Date and Time</label>
           <input
             type="date"
             value={startDate}
@@ -188,7 +188,7 @@ function ActivityForm({ activity, formType }) {
         </div>
 
         <div className="form-group date-time-group">
-          <label>End Date and Time:</label>
+          <label>End Date and Time</label>
           <input
             type="date"
             value={endDate}
@@ -203,7 +203,7 @@ function ActivityForm({ activity, formType }) {
         </div>
 
         <div className="form-group">
-          <label htmlFor="notes">Notes:</label>
+          <label htmlFor="notes">Notes</label>
           <textarea
             id="notes"
             value={notes}

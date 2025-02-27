@@ -1,2 +1,7 @@
 /* TODO: Add sitewide styles */
 @import url("./reset.css");
+
+body{
+    font-family: Geneva, Tahoma, sans-serif;
+    background: linear-gradient(136deg, rgb(68 132 206 / 46%), rgb(26 215 192 / 35%), rgb(163 124 121 / 59%), rgb(236, 240, 241)) 0% 0% / 110% 110%;
+}

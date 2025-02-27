@@ -73,18 +73,7 @@ function SignupFormModal() {
     setHasSubmitted(true);
 
     if (!Object.values(errors).length) {
-      // return setErrors({
-      //   confirmPassword:
-      //     "Confirm Password field must be the same as the Password field",
-      // });
-    
-      console.log({
-              email,
-             username,
-             password,
-             last_name: lastName,
-            first_name: firstName
-          })
+          
       const serverResponse = await dispatch(
         thunkSignup({
           email,

@@ -62,12 +62,12 @@
 .delete-trip-modal h1 {
     font-size: 1.5em;
     color: #333333;
-    margin-bottom: 10px;
+    margin-bottom: 24px;
 }
 
 .delete-trip-modal p {
     color: #777777;
-    margin-bottom: 20px;
+    margin-bottom: 38px;
 }
 
 .delete-trip-modal button {

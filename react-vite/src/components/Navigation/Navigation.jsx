@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import ProfileButton from "./ProfileButton";
 import { useSelector } from 'react-redux';
 import "./Navigation.css";
+import { MdTravelExplore } from 'react-icons/md';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -9,7 +10,7 @@ function Navigation({ isLoaded }) {
   return (
     <ul className='nav-wrapper'>
       <li className='nav-title'>
-        <NavLink  className="logo" to="/">Home</NavLink>
+        <NavLink  className="logo" to="/"> <MdTravelExplore size={32} />TripWise</NavLink>
       </li>
       {isLoaded && (
         <ul className='nav-actions'>          

@@ -5,11 +5,14 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e0f2f7;
 }
 .activity-form-container h2{
     padding-bottom: 24px;
     text-align: center;
-    font-size: large;
+    font-size: 1.8em;
+    /* Adjusted font size */
+    color: #29ABE2;
 }
 .activity-form {
     display: flex;
@@ -20,13 +23,11 @@
     margin-bottom: 15px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.activity-form-container label {
+    margin-bottom: 10px;
 }
 
-input[type="text"],
+.form-group input[type="text"],
 select,
 textarea {
     width: 100%;
@@ -35,6 +36,10 @@ textarea {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
+    background-color: white;
+}
+#notes{
+    background-color: white;
 }
 
 input[type="date"],
@@ -45,11 +50,14 @@ input[type="time"] {
     box-sizing: border-box;
     font-size: 16px;
     margin-right: 5px;
+    background-color: white;
+    width: 150px;
 }
 
 textarea {
     resize: vertical;
     min-height: 100px;
+    background-color: white;
 }
 
 .form-actions {
@@ -92,7 +100,7 @@ textarea {
     margin-top: 5px;
 }
 
-.date-time-group {
+/* .date-time-group {
     display: flex;
     align-items: center;
-}
+} */
