@@ -17,6 +17,7 @@
 
 .trip-info h2 {
     font-size: 1.5em;
+    font-weight: 550;
     color: #29abe2;
     margin-bottom: 20px;
     cursor: pointer;
@@ -24,7 +25,7 @@
 
 .trip-info span {
     display: block;
-    color: #777777;
+    color: #5f5c5c;
     margin-bottom: 20px;
 }
 
@@ -52,7 +53,9 @@
     margin-top: 10px;
     margin-right: 5px;
 }
-
+.location-icon{
+    padding-right: 2px;
+}
 .trip-info button:hover,
 .trip-info .modal-button:hover {
     background-color: #FF9800;

@@ -6,7 +6,7 @@ from app.forms import ActivityForm
 activity_routes = Blueprint('activities', __name__)
 
 
-@activity_routes.route('/')
+@activity_routes.route('')
 @login_required
 def get_all_activities():
     """

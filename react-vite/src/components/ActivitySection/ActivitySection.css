@@ -8,7 +8,7 @@
 }
 
 .activity-section button {
-    background-color: #4CAF50;
+    background-color: #29abe2;
     color: #ffffff;
     padding: 10px 15px;
     border: none;
@@ -52,12 +52,25 @@
 .add-activity-btn{
     text-align: center;
 }
+.location-icon{
+    padding-right: 2px;
+}
 .activity-time {
     width: 200px;
     font-weight: 600;
-    color: #555;
+    color: #555555b5;
     margin-right: 15px;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+.activity-icon {
+    margin-left: 8px; /* Add some space between time and icon */
+    font-size: 2.2em; /* Adjust icon size as needed */
+    color: #29abe2; /* Adjust icon color as needed */
+    margin-top: 15px;
 }
 .toggle-menu{
     padding: 5px 10px;
@@ -71,8 +84,8 @@
 
 .activity-name {
     font-weight: 600;
-    margin-bottom: 7px;
-    color: #222222d1;
+    margin-bottom: 12px;
+    color: #29abe2;;
 }
 
 .activity-location,
@@ -80,12 +93,18 @@
 .activity-notes {
     font-size: 0.9em;
     color: #777;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
 }
 .activity-notes {
-    color: orange;
+    color: #ff6c00f2;
+  align-items: center;
+  gap: 2px;
+  display: flex;
 }
-
+.activity-notes span{
+    color: #29abe2;
+  font-size: 1.3em;
+}
 
 .activity-actions {
     display: flex;
