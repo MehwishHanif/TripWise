@@ -10,8 +10,10 @@ import { BsThreeDots } from "react-icons/bs";
 // import { RiStickyNoteLine } from "react-icons/ri";
 // import { GiBigGear } from 'react-icons/gi';
 import { IoDocumentTextOutline } from "react-icons/io5";
+import { FaChevronDown, FaChevronUp,  } from 'react-icons/fa';
+
 import {
-  // MdNotes,
+  MdLocationCity,
   MdLocationPin,
   MdRestaurant,
   MdHiking,
@@ -50,7 +52,14 @@ function ActivitySection({ tripId, indexType }){
     
         return () => document.removeEventListener("click", closeMenu);
     }, []);
+    const [collapsedDays, setCollapsedDays] = useState({}); 
 
+    const toggleCollapse = (date) => {
+      setCollapsedDays((prev) => ({
+        ...prev,
+        [date]: !prev[date],
+      }));
+    };
     const closeMenu = () => setShowMenu(false);
 
     const activityIcons = {
@@ -67,7 +76,7 @@ function ActivitySection({ tripId, indexType }){
       Photography: <MdCameraAlt />,
       Social: <MdPeople />,
       Other: <MdQuestionMark/>,
-      Sightseeing: <MdCameraAlt/>, // or another icon
+      Sightseeing: <MdLocationCity/>,
       Culture: <MdTheaterComedy />,
       Entertainment: <MdLocalActivity />,
     };
@@ -110,68 +119,100 @@ function ActivitySection({ tripId, indexType }){
     const groupedActivities = groupActivitiesByDate(activities);
 
     return (
-    <div className='activity-section'>
-        <div className='add-activity-btn'>
-            <button onClick={handleAddTripActivity}> Add an Activity</button>
-        </div>
-        <div className="trip-activities">
-          {Object.entries(groupedActivities).map(([date, dailyActivities]) => (
-            <div key={date} className="daily-activities">
-              <h3 className="activity-day">{date}</h3>
-              {dailyActivities.map((activity) => (
-                <div key={activity?.id} className="activity-item">
-                  <div className="activity-time">
-                    {formatTime(activity?.startTime)} - {formatTime(activity?.endTime)}
-                    {activityIcons[activity?.category] && (
-                        <span 
+      <div className='activity-section'>
+      <div className='add-activity-btn'>
+        <button onClick={handleAddTripActivity}> Add an Activity</button>
+      </div>
+      <div className="trip-activities">
+        {Object.entries(groupedActivities).map(([date, dailyActivities]) => (
+          <div key={date} className="daily-activities">
+            <h3 className="activity-day"
+                onClick={() => toggleCollapse(date)}
+              >
+              {date}
+              <span
+                className="collapse-toggle"
+                // onClick={() => toggleCollapse(date)}
+              >
+                {collapsedDays[date] ? <FaChevronDown /> : <FaChevronUp />}
+              </span>
+            </h3>
+            {!collapsedDays[date] && (
+              <div>
+                {dailyActivities.map((activity) => (
+                  <div key={activity?.id} className="activity-item">
+                    <div className="activity-time">
+                      {formatTime(activity?.startTime)} - {formatTime(activity?.endTime)}
+                      {/* {activityIcons[activity?.category] && (
+                        <span
                           className="activity-icon"
-                          title={activity?.category} 
+                          title={activity?.category}
                           style={{ position: 'relative' }}
                         >
-                            {activityIcons[activity?.category]}
+                          {activityIcons[activity?.category]}
                         </span>
-                    )}
-                  </div>
-                  <div className="activity-details">
-                    <div className="activity-name">{activity?.name}</div>
-                    <div className="activity-location"><span className='location-icon'><MdLocationPin /></span>{activity?.location}</div>
-                    {/* <div className="activity-category">Category: {activity?.category}</div> */}
-                    {activity?.notes && <div className="activity-notes"><span><IoDocumentTextOutline /></span> {activity?.notes}</div>}
-                  </div>
-                  <div className="activity-actions">
-                    <div
-                        className="toggle-menu"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                        setShowMenu(!showMenu);
-                        setMenuId(activity?.id);
-                        }}>
-                       <BsThreeDots />
+                      )} */}
                     </div>
-                    {showMenu && menuId === activity?.id && (
+                    <div className='activity-category-icon'>
+                    {activityIcons[activity?.category] && (
+                        <span
+                          className="activity-icon"
+                          title={activity?.category}
+                          style={{ position: 'relative' }}
+                        >
+                          {activityIcons[activity?.category]}
+                        </span>
+                      )}
+                    </div>
+                    <div className="activity-details">
+                      <div className="activity-name">{activity?.name}</div>
+                      <div className="activity-location">
+                        <span className='location-icon'><MdLocationPin /></span>{activity?.location}
+                      </div>
+                      {activity?.notes && (
+                        <div className="activity-notes">
+                          <span><IoDocumentTextOutline /></span> {activity?.notes}
+                        </div>
+                      )}
+                    </div>
+                    <div className="activity-actions">
+                      <div
+                        className="toggle-menu-activity"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setShowMenu(!showMenu);
+                          setMenuId(activity?.id);
+                        }}
+                      >
+                        <BsThreeDots />
+                      </div>
+                      {showMenu && menuId === activity?.id && (
                         <ul className={"activity-actions-dropdown"} ref={ulRef}>
-                            <OpenModalMenuItem 
-                                itemText="Delete Activity" 
-                                onItemClick={closeMenu}
-                                modalComponent={<DeleteActivityModal  tripId={tripId} activityId={activity?.id} />}
-                            />                      
-                            {indexType === "upcoming" && (<li
-                                onClick={ () => {
-                                        navigate(`/activities/${activity?.id}/edit`)
-                                        closeMenu();
-                                    }}
-                                >
-                                Update Activity
-                            </li> )}
+                          <OpenModalMenuItem
+                            itemText="Delete Activity"
+                            onItemClick={closeMenu}
+                            modalComponent={<DeleteActivityModal tripId={tripId} activityId={activity?.id} />}
+                          />
+                          {indexType === "upcoming" && (
+                            <li
+                              onClick={() => {
+                                navigate(`/activities/${activity?.id}/edit`);
+                                closeMenu();
+                              }}
+                            >
+                              Update Activity
+                            </li>
+                          )}
                         </ul>
-                    )}
-                    
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
     );
 }

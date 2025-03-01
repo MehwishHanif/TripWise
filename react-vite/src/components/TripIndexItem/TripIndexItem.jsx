@@ -5,7 +5,8 @@ import OpenModalMenuItem from '../Navigation/OpenModalMenuItem';
 import DeleteTripModal from '../DeleteTripModal';
 import { BsThreeDots } from "react-icons/bs";
 import { useEffect, useState, useRef } from "react";
-import { MdLocationPin } from 'react-icons/md';
+import { MdLocationPin, MdDateRange } from 'react-icons/md';
+import {FaClock} from 'react-icons/fa';
 
 function TripIndexItem({ trip, indexType, pageType }){
     const navigate = useNavigate();
@@ -62,8 +63,9 @@ function TripIndexItem({ trip, indexType, pageType }){
         <div className="trip-index-item">
             <div className="trip-info">
                 <h2 onClick={handleTripShow}>{trip?.name}</h2>
-                <span><MdLocationPin />{` ${trip?.destination}`}</span>
-                <span>{`${tripDates} (${tripDuration} days)`}</span>
+                <span><MdLocationPin />{`${trip?.destination}`}</span>
+                <span><MdDateRange />{`${tripDates}`}</span>
+                <span><FaClock />{`${tripDuration} days`}</span>
             {pageType === "tripShow" && (
             <div className='tripshow-action'>
                 <div  className="toggle-menu" onClick={toggleMenu}>
