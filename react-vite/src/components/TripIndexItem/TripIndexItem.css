@@ -13,24 +13,29 @@
 .trip-info {
     flex-grow: 1;
     padding-right: 20px;
+    padding-left: 11px;
 }
 
 .trip-info h2 {
     font-size: 1.5em;
+    font-weight: 550;
     color: #29abe2;
     margin-bottom: 20px;
     cursor: pointer;
+    text-align: left;
 }
 
 .trip-info span {
     display: block;
-    color: #777777;
+    color: #5f5c5c;
     margin-bottom: 20px;
+    display: flex;
+  align-items: center;
 }
 
 .trip-image {
     width: 200px;
-    height: 150px;
+    height: 174px;
     overflow: hidden;
     border-radius: 8px;
 }
@@ -52,7 +57,9 @@
     margin-top: 10px;
     margin-right: 5px;
 }
-
+.location-icon{
+    padding-right: 2px;
+}
 .trip-info button:hover,
 .trip-info .modal-button:hover {
     background-color: #FF9800;
@@ -65,6 +72,10 @@
 .trip-info .cancel-button {
     background-color: #E0E0E0;
     color: #333;
+}
+.trip-info svg{
+    color: #ff8400;
+    padding-right: 7px;
 }
 
 .trip-info .cancel-button:hover {

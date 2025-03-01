@@ -8,7 +8,7 @@
 }
 
 .activity-section button {
-    background-color: #4CAF50;
+    background-color: #29abe2;
     color: #ffffff;
     padding: 10px 15px;
     border: none;
@@ -18,7 +18,7 @@
 }
 
 .activity-section button:hover {
-    background-color: #43A047;
+    background-color: #ff840094;
 }
 
 .trip-activities {
@@ -34,13 +34,26 @@
 }
 
 .activity-day {
-    font-size: 1.1em;
-    color: #222222d1;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 5px;
+    margin: 0px;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1em;
+  color: #222222d1;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 13px;
+  cursor: pointer;
+  padding-left: 7px;
+  padding-top: 7px;
 }
 
+.collapse-toggle {
+    cursor: pointer;
+    font-size: 0.9em;
+    padding-right: 5px;
+    color: #888;
+  }
 .activity-item {
     display: flex;
     align-items: flex-start;
@@ -48,31 +61,52 @@
     padding: 8px;
     border-radius: 4px;
     background-color: #f0f0f0;
+    padding-top: 14px;
+  padding-bottom: 11px;
 }
 .add-activity-btn{
     text-align: center;
 }
+.location-icon{
+    padding-right: 2px;
+    color: #ff8400;
+}
 .activity-time {
     width: 200px;
     font-weight: 600;
-    color: #555;
-    margin-right: 15px;
+    color: #555555b5;
     white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
 }
-.toggle-menu{
-    padding: 5px 10px;
+.activity-icon {
+    font-size: 1.3em;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #29abe2;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;;
+}
+.toggle-menu-activity{
+    /* padding: 5px 10px; */
     cursor: pointer;
     width: fit-content;
 }
 
 .activity-details {
     flex-grow: 1;
+    padding-left: 10px;
 }
 
 .activity-name {
     font-weight: 600;
-    margin-bottom: 7px;
-    color: #222222d1;
+    margin-bottom: 12px;
+    color: #29abe2;;
 }
 
 .activity-location,
@@ -80,12 +114,19 @@
 .activity-notes {
     font-size: 0.9em;
     color: #777;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
 }
 .activity-notes {
-    color: orange;
+    color: #ff8400;
+  align-items: center;
+  gap: 2px;
+  display: flex;
+  font-size: small;
 }
-
+.activity-notes span{
+    color: #29abe2;
+  font-size: 1.3em;
+}
 
 .activity-actions {
     display: flex;
@@ -98,7 +139,13 @@
     font-size: 1.2em;
     color: #888;
 }
-
+.activity-category-icon{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 65px;
+}
 .activity-actions-dropdown {
     position: absolute;
     background-color: #ffffff;

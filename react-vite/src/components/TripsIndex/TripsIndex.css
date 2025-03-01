@@ -38,7 +38,7 @@
 }
 
 .trips-index button {
-  background-color: #4CAF50;
+  background-color: #29abe2;
   color: #ffffff;
   padding: 10px 15px;
   border: none;
@@ -48,5 +48,5 @@
 }
 
 .trips-index button:hover {
-  background-color: #43A047;
+  background-color: #ff840094;
 }
