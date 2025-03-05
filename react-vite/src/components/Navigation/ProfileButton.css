@@ -1,43 +1,8 @@
-/* .profile-dropdown {
-    border: 1px grey solid;
-    border-radius: 5%;
-    background-color: #d9c7c7;
-    display: flex ;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    padding: 16px;
-    font-size: 1rem;
-    color: #c70039;
-    position: absolute;
-    z-index: 500;
-    right: 0;
-    margin-right: 29px;
-}
-
-.modal-item:hover{
-  cursor: pointer;
-}
-
-.hidden{
-    display: none
-}
-
-
-.logout-button{
-    background-color: #b5264e;
-  color: #fff;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px gray;
-  cursor: pointer;  
-  padding: 5px;
-  font-size: 12px;
-} */
 
 .profile-dropdown {
   border: 1px solid #ddd; /* Light border */
   border-radius: 8px; /* Rounded corners */
-  background-color: #ffffff; /* White background */
+  background-color: #e5f0f3; /* White background */
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align items to the left */
@@ -51,54 +16,38 @@
   top: 45px; /* Adjust top spacing */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   list-style: none; /* Remove default list styles */
+  margin-right: 6%;
 }
 
 .profile-dropdown li {
   padding: 5px 10px;
-  cursor: pointer;
   text-align: left; /* Align text to the left */
+  color: #787171;
+  font-size: 1.1em;
 }
 
-.profile-dropdown li:hover {
-  background-color: #f0f0f0; /* Light hover background */
-}
-
-.modal-item:hover {
-  cursor: pointer;
-}
 
 .hidden {
   display: none;
 }
 
-.logout-button {
-  background-color: #d9534f; /* Red for logout */
-  color: #ffffff; /* White text */
-  border-radius: 4px; /* Rounded corners */
-  box-shadow: none; /* Removed box shadow */
-  cursor: pointer;
-  padding: 8px 12px; /* Adjusted padding */
-  font-size: 0.9em; /* Consistent font size */
-  border: none;
-  width: 100%; /* Full width button */
-  text-align: center; /* Center text */
+.logout-button:hover{
+  background-color: #ffffffa8; /* Light hover background */
 }
-
-.logout-button:hover {
-  background-color: #c9302c; /* Darker red on hover */
-}
-
 /* Style for OpenModalMenuItem */
 .profile-dropdown .modal-button {
   background-color: transparent; /* Transparent background */
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  color: #29ABE2; /* Primary blue color */
   text-align: left;
-  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.profile-dropdown .modal-button li{
+  color: #29ABE2; /* Primary blue color */
 }
 
+
 .profile-dropdown .modal-button:hover {
-  background-color: #f0f0f0; /* Light hover background */
+  background-color: #ffffffa8; /* Light hover background */
 }

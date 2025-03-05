@@ -1,7 +1,10 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, DateField, BooleanField
-from wtforms.validators import DataRequired, Length, ValidationError
+from wtforms.validators import DataRequired, Length, ValidationError, Optional
+# from flask_wtf.file import FileField, FileAllowed
 
+
+# ALLOWED_EXTENSIONS = { "png", "jpg", "jpeg"}
 
 def end_date_after_start_date(form, field):
     """
@@ -20,3 +23,4 @@ class TripForm(FlaskForm):
     start_date = DateField("Start Date", format="%Y-%m-%d", validators=[DataRequired()])
     end_date = DateField("End Date", format="%Y-%m-%d", validators=[DataRequired(), end_date_after_start_date]) # Added custom validator
     is_private = BooleanField("Is Private")
+    # image = FileField("Image File", validators=[Optional(), FileAllowed(list(ALLOWED_EXTENSIONS))])

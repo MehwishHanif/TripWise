@@ -2,7 +2,7 @@
 .delete-trip-modal {
     background-color: #ffffff;
     border-radius: 8px;
-    padding: 20px;
+    padding: 22px 20px 25px 20px;
     width: 350px;
     /* Adjust width as needed */
     text-align: center;
@@ -11,7 +11,7 @@
 
 .delete-trip-modal h1 {
     font-size: 1.5em;
-    color: #333333;
+    color: #29abe2;
     margin-bottom: 24px;
 }
 
@@ -27,6 +27,7 @@
     cursor: pointer;
     font-size: 1em;
     margin: 0 5px;
+    width: 91px;
     /* Add some spacing between buttons */
 }
 

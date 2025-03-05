@@ -1,70 +1,14 @@
-/* .profile-dropdown {
-  position: absolute;
-}
-
-.hidden{
-  display: none
-}
-
-.nav-wrapper{
-  display: flex;
-  height: 50px;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px;
-  border-bottom: 1px grey solid;
-  position: relative;
-  margin-left: 3%;
-  margin-right: 3%;
-  padding-bottom: 20px;
-}
-
-.nav-actions{
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  width: 50%
-}
-.nav-title{
-  width: 50%;
-  margin-left: 10px;
-  color: #b5264e;
-}
-
-.logo{
-  display: flex;
-  gap: 1px;
-  flex-direction: row;
-  font-size: x-large;
-font-weight: bold;
-}
-.nav-profile-btn{
-  margin-right: 10px;
-  margin-left: 40px; 
-  background-color: #b5264e;
-  padding: 4px;
-  padding-bottom: 3px;
-  box-sizing: border-box;
-  color:white;
-  border-radius: 6px;
-}
-
-.new-spot-link{
-  align-self: center;
-  color: #b5264e;
-} */
 
 .nav-wrapper {
   display: flex;
-  height: 60px; /* Increased height for better spacing */
+  height: 60px; 
   justify-content: space-between;
   align-items: center;
-  padding: 0 6%; /* Adjusted padding for consistent margins */
-  border-bottom: 1px solid #ddd; /* Light border */
+  padding: 12px 6% 10px 6%; 
+  border-bottom: 1px solid #ddd; 
   position: relative;
   
-  background-color: #E0F2F7;
+  background-color: #e5f0f3;
 }
 
 .nav-actions {
@@ -77,7 +21,9 @@ font-weight: bold;
   font-size: 1.8em; /* Increased font size for title */
   font-weight: 600; /* Semi-bold font weight */
 }
-
+.nav-title svg{
+  color: #FF9800;
+}
 .logo {
   text-decoration: none; /* Remove underline from NavLink */
   color: inherit; /* Inherit color from nav-title */
@@ -91,6 +37,17 @@ font-weight: bold;
   color: #333; /* Dark gray text */
   border-radius: 4px; /* Rounded corners */
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-profile-btn button{
+  display: flex;
+  align-items: center;
+  color: #29ABE2;
+}
+
+.nav-profile-btn svg{  
+  color: #29ABE2;
+  font-size: 1.4em;
 }
 
 .nav-profile-btn:hover {

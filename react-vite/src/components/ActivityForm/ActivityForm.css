@@ -5,7 +5,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #e0f2f7;
+    background-color: #e5f0f3;
 }
 .activity-form-container h2{
     padding-bottom: 24px;
@@ -18,12 +18,9 @@
     flex-direction: column;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
 
 .activity-form-container label {
-    margin-bottom: 10px;
+    color: #585454;
 }
 
 .form-group input[type="text"],
@@ -34,23 +31,42 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 0.9em;
     background-color: white;
+    margin-top: 4px;
+    color: #585454;
 }
 #notes{
     background-color: white;
+    margin-top: 4px;
+    color: #585454;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
 }
-
+.date-component{
+    display: flex;
+  flex-direction: column;
+}
 input[type="date"],
 input[type="time"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 0.9em;
     margin-right: 5px;
     background-color: white;
-    width: 150px;
+    width: 265px;
+    color: #585454;
+    margin-top: 4px;
+}
+.activity-form select{
+    cursor: pointer;
+}
+.date-input{
+    display: flex;
+    align-items: center;
+  justify-content: space-between;
 }
 
 textarea {
@@ -76,12 +92,12 @@ textarea {
 }
 
 .submit-button {
-    background-color: #007bff;
+    background-color: #29ABE2;
     color: white;
 }
 
 .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #ff840094;
 }
 
 .cancel-button {
@@ -90,16 +106,13 @@ textarea {
 }
 
 .cancel-button:hover {
-    background-color: #ccc;
+    background-color: #ff840094;
 }
 
 .error {
     color: red;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 0.8em;
+    /* margin-top: 5px; */
+    margin-bottom: 4px;
+    min-height: 1.4em;
 }
-
-/* .date-time-group {
-    display: flex;
-    align-items: center;
-} */

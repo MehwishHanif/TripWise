@@ -1,5 +1,5 @@
 .trips-feed {
-  width: 600px;
+  width: 700px;
   padding: 20px;
 }
 
@@ -7,12 +7,12 @@
 .trips-feed .tab-nav {
   display: flex;
   border-bottom: 2px solid #ddd;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .tab-nav .trips-button {
   background-color: transparent;
-  color: #333;
+  color: #676262;
   padding: 10px 20px;
   border: none;
   border-bottom: 2px solid transparent;
@@ -20,7 +20,10 @@
   font-size: 1em;
   transition: border-bottom 0.3s ease;
 }
-
+.add-trip-btn{
+  display: flex;
+    justify-content: end;
+}
 .tab-nav .trips-button:hover {
   background-color: #f0f0f0;
 }
@@ -31,10 +34,11 @@
 }
 
 .trips-index {
-  background-color: #E0F2F7;
+  /* background-color: #E0F2F7; */
+  /* background-color: #e5f0f3; */
   border-radius: 8px;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 30px 20px 20px 20px;
+  /* margin-top: 20px; */
 }
 
 .trips-index button {

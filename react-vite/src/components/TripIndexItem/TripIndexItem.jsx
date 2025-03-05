@@ -6,13 +6,19 @@ import DeleteTripModal from '../DeleteTripModal';
 import { BsThreeDots } from "react-icons/bs";
 import { useEffect, useState, useRef } from "react";
 import { MdLocationPin, MdDateRange } from 'react-icons/md';
+import { useSelector } from 'react-redux';
 import {FaClock} from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
+
 
 function TripIndexItem({ trip, indexType, pageType }){
     const navigate = useNavigate();
     const [showMenu, setShowMenu] = useState(false);
     // const [menuId, setMenuId] = useState("");
     const ulRef = useRef();
+    const sessionUser = useSelector(state => state.session.user);
+
+    const tripOwner = useSelector((state) => state.users[trip?.userId]);
 
     useEffect(() => {
         const closeMenu = (e) => {
@@ -60,13 +66,20 @@ function TripIndexItem({ trip, indexType, pageType }){
     };
 
     return (
+    <div className='trip-items-container'>
+        { pageType==="explore" && (
+            <div className='trip-user-info'>
+                <span className='trip-user-icon'><FaUserCircle /></span>
+                <span className='trip-user-name'>{`${tripOwner.firstName} ${tripOwner.lastName}`}</span>
+            </div>
+        )}
         <div className="trip-index-item">
             <div className="trip-info">
                 <h2 onClick={handleTripShow}>{trip?.name}</h2>
                 <span><MdLocationPin />{`${trip?.destination}`}</span>
                 <span><MdDateRange />{`${tripDates}`}</span>
                 <span><FaClock />{`${tripDuration} days`}</span>
-            {pageType === "tripShow" && (
+            {pageType === "tripShow" && trip?.userId === sessionUser.id && (
             <div className='tripshow-action'>
                 <div  className="toggle-menu" onClick={toggleMenu}>
                         <BsThreeDots />
@@ -87,6 +100,7 @@ function TripIndexItem({ trip, indexType, pageType }){
                 <img src={trip?.imageUrl} />
             </div>
         </div>
+    </div>
     )
 }
 

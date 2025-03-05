@@ -1,8 +1,8 @@
 .signup-form-modal {
     background-color: #ffffff;
     border-radius: 8px;
-    padding: 20px;
-    width: 350px; /* Adjust width as needed */
+    padding: 30px 50px 50px 50px;
+    width: 360px; /* Adjust width as needed */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -10,7 +10,7 @@
   .signup-form-modal h1 {
     font-size: 1.8em;
     color: #29ABE2; /* Primary blue for heading */
-    margin-bottom: 20px;
+    margin-bottom: 35px;
   }
   
   .signup-form-modal form {
