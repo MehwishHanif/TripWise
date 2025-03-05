@@ -143,7 +143,7 @@ function ActivityForm({ activity, formType }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          {hasSubmitted && errors.name && <p className="error">{errors.name}</p>}
+          <p className="error">{hasSubmitted && errors.name && `${errors.name}`}</p>
         </div>
 
         <div className="form-group">
@@ -154,7 +154,7 @@ function ActivityForm({ activity, formType }) {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          {hasSubmitted && errors.location && <p className="error">{errors.location}</p>}
+          <p className="error">{hasSubmitted && errors.location && `${errors.location}`}</p>
         </div>
 
         <div className="form-group">
@@ -170,36 +170,51 @@ function ActivityForm({ activity, formType }) {
                 </option>
             ))}
           </select>
+          <p className="error"> </p>
         </div>
 
         <div className="form-group date-time-group">
-          <label>Start Date and Time</label>
-          <input
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-          <input
-            type="time"
-            value={startTime}
-            onChange={(e) => setStartTime(e.target.value)}
-          />
-          {hasSubmitted && errors.start_time && <p className="error">{errors.start_time}</p>}
+          <div className='date-input'>
+            <div className='date-component'>
+              <label>Start Date</label>
+              <input
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                />
+            </div>
+            <div className='date-component'>
+              <label>Start Time</label>
+              <input
+                type="time"
+                value={startTime}
+                onChange={(e) => setStartTime(e.target.value)}
+              />
+            </div>
+          </div>
+          <p className="error">{hasSubmitted && errors.start_time && `${errors.start_time}`}</p>
         </div>
 
         <div className="form-group date-time-group">
-          <label>End Date and Time</label>
-          <input
-            type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-          />
-          <input
-            type="time"
-            value={endTime}
-            onChange={(e) => setEndTime(e.target.value)}
-          />
-          {hasSubmitted && errors.end_time && <p className="error">{errors.end_time}</p>}
+          <div className='date-input'>
+            <div className='date-component'>
+              <label>End Date</label>
+              <input
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+              />
+            </div>
+            <div className='date-component'>              
+              <label>End Time</label>
+              <input
+                type="time"
+                value={endTime}
+                onChange={(e) => setEndTime(e.target.value)}
+              />
+            </div>
+          </div>              
+         <p className="error"> {hasSubmitted && errors.end_time && `${errors.end_time}`}</p>
         </div>
 
         <div className="form-group">
@@ -209,6 +224,7 @@ function ActivityForm({ activity, formType }) {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
           />
+          <p className="error"> {hasSubmitted && errors.notes && `${errors.notes}`}</p>
         </div>
 
         <div className="form-actions">

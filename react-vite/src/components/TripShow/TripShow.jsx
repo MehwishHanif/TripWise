@@ -20,7 +20,7 @@ function TripShow(){
                 <TripIndexItem trip={trip} indexType={indexType} pageType="tripShow"/>
             </div>
             <div>
-                <ActivitySection tripId={tripId} indexType={indexType}/>
+                <ActivitySection trip={trip} indexType={indexType}/>
             </div>            
         </div>
     )

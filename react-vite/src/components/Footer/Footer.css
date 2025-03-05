@@ -1,0 +1,26 @@
+.footer{
+    margin-top: 20px;
+  border-top: 1px solid #ddd;
+  border-bottom: .5px solid grey;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3%;
+  margin-right: 3%;
+  color: #4c4040;
+}
+
+.about-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-copyright{
+    font-size: 0.7em;
+    margin-top: 15px;
+}

@@ -189,5 +189,124 @@ activities_data = [
         'start_time': datetime.fromisoformat('2026-04-17T17:00:00').replace(tzinfo=timezone.utc),
         'end_time': datetime.fromisoformat('2026-04-17T19:00:00').replace(tzinfo=timezone.utc),
         'notes': 'Arrive early for sunset views.'
+    },
+    # Grand Canyon Adventure (User 2 - May 2023)
+    {
+        'trip_id': 9,
+        'name': 'Hiking South Rim',
+        'category': 'Adventure',
+        'location': 'Grand Canyon National Park',
+        'start_time': datetime.fromisoformat('2023-05-11T07:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2023-05-11T12:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Carry plenty of water and snacks.'
+    },
+    {
+        'trip_id': 9,
+        'name': 'Colorado River Rafting',
+        'category': 'Sports',
+        'location': 'Colorado River',
+        'start_time': datetime.fromisoformat('2023-05-12T09:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2023-05-12T15:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Book tour in advance.'
+    },
+
+    # Rome History Tour (User 2 - August 2023)
+    {
+        'trip_id': 10,
+        'name': 'Colosseum & Roman Forum Tour',
+        'category': 'Sightseeing',
+        'location': 'Colosseum',
+        'start_time': datetime.fromisoformat('2023-08-21T10:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2023-08-21T13:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Wear comfortable walking shoes.'
+    },
+    {
+        'trip_id': 10,
+        'name': 'Vatican City Tour',
+        'category': 'Culture',
+        'location': 'Vatican Museums',
+        'start_time': datetime.fromisoformat('2023-08-23T14:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2023-08-23T17:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Buy tickets online to skip the queue.'
+    },
+
+    # Canadian Rockies Exploration (User 2 - October 2023)
+    {
+        'trip_id': 11,
+        'name': 'Lake Louise Kayaking',
+        'category': 'Sports',
+        'location': 'Lake Louise',
+        'start_time': datetime.fromisoformat('2023-10-06T09:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2023-10-06T11:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Bring a waterproof bag for valuables.'
+    },
+    {
+        'trip_id': 11,
+        'name': 'Banff Gondola Ride',
+        'category': 'Sightseeing',
+        'location': 'Banff National Park',
+        'start_time': datetime.fromisoformat('2023-10-07T15:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2023-10-07T17:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Enjoy breathtaking mountain views.'
+    },
+
+    # Barcelona City Escape (User 3 - June 2022)
+    {
+        'trip_id': 12,
+        'name': 'Sagrada Familia Visit',
+        'category': 'Sightseeing',
+        'location': 'Barcelona, Spain',
+        'start_time': datetime.fromisoformat('2022-06-16T10:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2022-06-16T12:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Book tickets in advance.'
+    },
+    {
+        'trip_id': 12,
+        'name': 'Tapas & Wine Tour',
+        'category': 'Dining',
+        'location': 'Gothic Quarter',
+        'start_time': datetime.fromisoformat('2022-06-17T19:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2022-06-17T22:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Try authentic Spanish tapas.'
+    },
+
+    # Great Wall of China Expedition (User 3 - Sept 2022)
+    {
+        'trip_id': 13,
+        'name': 'Great Wall Hike - Mutianyu Section',
+        'category': 'Adventure',
+        'location': 'Mutianyu, Beijing',
+        'start_time': datetime.fromisoformat('2022-09-11T08:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2022-09-11T12:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Wear hiking boots.'
+    },
+    {
+        'trip_id': 13,
+        'name': 'Beijing Duck Dinner',
+        'category': 'Dining',
+        'location': 'Beijing, China',
+        'start_time': datetime.fromisoformat('2022-09-12T19:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2022-09-12T21:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Famous Peking duck restaurant.'
+    },
+
+    # Amazon Rainforest Adventure (User 3 - Nov 2022)
+    {
+        'trip_id': 14,
+        'name': 'Amazon River Canoeing',
+        'category': 'Adventure',
+        'location': 'Amazon River',
+        'start_time': datetime.fromisoformat('2022-11-06T07:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2022-11-06T10:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Look out for wildlife!'
+    },
+    {
+        'trip_id': 14,
+        'name': 'Night Jungle Safari',
+        'category': 'Outdoor',
+        'location': 'Amazon Rainforest',
+        'start_time': datetime.fromisoformat('2022-11-07T21:00:00').replace(tzinfo=timezone.utc),
+        'end_time': datetime.fromisoformat('2022-11-07T23:00:00').replace(tzinfo=timezone.utc),
+        'notes': 'Bring a flashlight and insect repellent.'
     }
 ]

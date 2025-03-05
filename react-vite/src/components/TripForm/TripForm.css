@@ -5,7 +5,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #e0f2f7;
+    background-color: #e5f0f3;
 }
 
 .trip-form h2 {
@@ -22,21 +22,24 @@
     flex-direction: column;
 }
 
-.form-group {
+/* .form-group {
     margin-bottom: 20px;
-    /* Increased margin */
-}
+   
+} */
 
-label {
+/* label {
     display: block;
     margin-bottom: 8px;
-    /* Adjusted margin */
     font-weight: 600;
-    /* Adjusted font weight */
     color: #333;
-    /* Dark gray text */
+} */
+ .trip-form .date-group{
+    display: flex;
+    justify-content: space-between;
+ }
+.trip-form label{
+    color: #585454;
 }
-
 input[type="text"],
 input[type="date"],
 textarea {
@@ -51,6 +54,7 @@ textarea {
     /* Adjusted font size */
     transition: border-color 0.3s ease;
     background-color: white;
+    margin-top: 4px;
     /* Added transition */
 }
 
@@ -69,6 +73,7 @@ textarea:focus {
     /* Adjusted min height */
     border: 1px solid #ddd;
     background-color: white;
+    margin-top: 4px;
 }
 
 .form-actions {
@@ -103,7 +108,7 @@ textarea:focus {
 }
 
 .submit-button:hover {
-    background-color: #1E88E5;
+    background-color: #ff840094;
     /* Darker blue on hover */
 }
 
@@ -114,16 +119,18 @@ textarea:focus {
 }
 
 .cancel-button:hover {
-    background-color: #bdbdbd;
+    background-color: #ff840094;
     /* Darker gray on hover */
 }
 
 .error {
     color: #d9534f;
     /* Red for errors */
-    font-size: 0.9em;
+    font-size: 0.8em;
     /* Adjusted font size */
-    margin-top: 5px;
+    /* margin-top: 5px; */
+    margin-bottom: 4px;
+    min-height: 1.4em;
 }
 
 /* Image Selection Styles */
@@ -137,7 +144,7 @@ textarea:focus {
 }
 
 .img-change-btn {
-    background-color: #4CAF50;
+    background-color: #29ABE2;
     /* Accent green for change image button */
     color: white;
     padding: 10px 15px;
@@ -149,6 +156,6 @@ textarea:focus {
 }
 
 .img-change-btn:hover {
-    background-color: #43A047;
+    background-color: #ff840094;
     /* Darker green on hover */
 }

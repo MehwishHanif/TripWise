@@ -3,5 +3,34 @@
 
 body{
     font-family: Geneva, Tahoma, sans-serif;
-    background: linear-gradient(136deg, rgb(68 132 206 / 46%), rgb(26 215 192 / 35%), rgb(163 124 121 / 59%), rgb(236, 240, 241)) 0% 0% / 110% 110%;
+    /* background: linear-gradient(136deg, rgb(68 132 206 / 46%), rgb(26 215 192 / 35%), rgb(163 124 121 / 59%), rgb(236, 240, 241)) 0% 0% / 110% 110%; */
+    position: relative; /* for pseudo-element positioning */
+    min-height: 100vh; /*  ensure body covers viewport */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(136deg, rgb(68 132 206 / 46%), rgb(26 215 192 / 35%), rgb(236 138 46 / 42%), rgb(236, 240, 241));
+    /* background: linear-gradient(136deg, rgb(68 132 206 / 46%), rgb(26 215 192 / 35%), rgb(163 124 121 / 59%), rgb(236, 240, 241)); */
+    z-index: -1;
+}
+
+
+html, body, #root{
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    flex-grow: 1;
+}
+#root{
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
 }

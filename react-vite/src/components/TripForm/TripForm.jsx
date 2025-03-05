@@ -134,58 +134,59 @@ function TripForm({ trip, formType }) {
         </div>
 
         <div className="form-group">
-          <label htmlFor="tripName">Trip Name:</label>
+          <label htmlFor="tripName">Trip Name</label>
           <input
             type="text"
             id="tripName"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          {hasSubmitted && errors.name && <p className="error">{errors.name}</p>}
+          <p className="error">{hasSubmitted && errors.name && `${errors.name}`}</p>
         </div>
 
         <div className="form-group">
-          <label htmlFor="destination">Destination:</label>
+          <label htmlFor="destination">Destination</label>
           <input
             type="text"
             id="destination"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
           />
-          {hasSubmitted && errors.destination && <p className="error">{errors.destination}</p>}
+          <p className="error">{hasSubmitted && errors.destination && `${errors.destination}`}</p>
         </div>
 
-        <div className="form-group">
-          <label htmlFor="startDate">Start Date:</label>
-          <input
-            type="date"
-            id="startDate"
-            min={minDate} 
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-          {hasSubmitted && errors.start_date && <p className="error">{errors.start_date}</p>}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="endDate">End Date:</label>
+        <div className="date-group">
+          <div className='date-component'>
+            <label htmlFor="startDate">Start Date</label>
+            <input
+              type="date"
+              id="startDate"
+              min={minDate} 
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+            <p className="error">{hasSubmitted && errors.start_date && `${errors.start_date}`}</p>
+          </div>
+          <div className='date-component'>
+          <label htmlFor="endDate">End Date</label>
           <input
             type="date"
             id="endDate"
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
           />
-          {hasSubmitted && errors.end_date && <p className="error">{errors.end_date}</p>}
+          <p className="error">{hasSubmitted && errors.end_date && `${errors.end_date}`}</p>
+        </div>
         </div>
 
         <div className="form-group">
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description">Description</label>
           <textarea
             id="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
-          {hasSubmitted && errors.description && <p className="error">{errors.description}</p>}
+          <p className="error">{hasSubmitted && errors.description && `${errors.description}`}</p>
         </div>
         <div className="form-actions">
           <button type="submit" className="submit-button">{formType==="create"? "Add Trip" : "Update Trip"}</button>

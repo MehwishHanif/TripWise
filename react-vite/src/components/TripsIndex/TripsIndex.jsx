@@ -13,21 +13,26 @@ function TripsIndex(){
     const dispatch =  useDispatch();
     const [isUpcomingTripsActive, setIsUpcomingTripsActive] = useState(true);
     const [isPastTripsActive, setIsPastTripsActive] = useState(false);
-    const trips = useSelector(selectUserTrips);//useSelector( (state) => Object.values(state.trips) || []);
-   
+    const [isExploreTripsActive, setIsExploreTripsActive] = useState(false);
+    const trips = useSelector(selectUserTrips);
+    const sessionUser = useSelector(state => state.session.user);
+    const allTrips = useSelector( (state) => Object.values(state.trips) || []);
+
     useEffect(() => {
             dispatch(thunkGetAllTrips())
             dispatch(thunkGetAllActivities())       
     }, [dispatch]);
 
     const todayUTC = new Date().toISOString().split("T")[0];
-    trips.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
-    const pastTrips = trips.filter(trip => trip.endDate.split("T")[0] < todayUTC);
-    const upcomingTrips = trips.filter(trip => trip.endDate.split("T")[0] >= todayUTC).sort((a, b) => {
+    trips.sort((a, b) => new Date(b.startDate) - new Date(a.startDate)); //sort user trips, soonest first
+    const pastTrips = trips.filter(trip => trip.endDate.split("T")[0] < todayUTC); //get user past trips
+    const upcomingTrips = trips.filter(trip => trip.endDate.split("T")[0] >= todayUTC).sort((a, b) => { //get user upcoming trips
         const dateA = new Date(a.endDate.split("T")[0]);
         const dateB = new Date(b.endDate.split("T")[0]);
         return dateA - dateB; 
-    });    
+    });   
+        
+    const otherUsersPastTrips = allTrips.filter(trip => trip.endDate.split("T")[0] < todayUTC && trip.userId !== sessionUser.id); //get past trips of other users
 
     const handleAddTrip = () =>{
         navigate(`/trips/new`)
@@ -41,6 +46,7 @@ function TripsIndex(){
                   onClick={() => {
                     setIsUpcomingTripsActive(true);
                     setIsPastTripsActive(false);
+                    setIsExploreTripsActive(false);
                   }}
                 > 
                 Upcomming Trips
@@ -50,14 +56,25 @@ function TripsIndex(){
                   onClick={() => {
                     setIsPastTripsActive(true);
                     setIsUpcomingTripsActive(false);
+                    setIsExploreTripsActive(false);
                   }}
                 >
                 Past Trips
                 </button>
+                <button
+                  className={`trips-button ${isExploreTripsActive ? 'active' : ''}`}
+                  onClick={() => {
+                    setIsExploreTripsActive(true);
+                    setIsPastTripsActive(false);
+                    setIsUpcomingTripsActive(false);
+                  }}
+                >
+                Explore Trips
+                </button>
             </div>
            {isUpcomingTripsActive && (
                 <div className="trips-index">
-                    <button onClick={handleAddTrip}>Add a Trip</button>
+                    <div className='add-trip-btn'><button onClick={handleAddTrip}>Add a Trip</button></div>
                     {upcomingTrips?.map( trip => (
                         <TripIndexItem key={trip.id} trip={trip} indexType="upcoming" />
                     ))}
@@ -66,6 +83,13 @@ function TripsIndex(){
            {isPastTripsActive && (
                 <div className="trips-index">
                     {pastTrips?.map( trip => (
+                        <TripIndexItem key={trip.id} trip={trip} indexType="past"/>
+                    ))}
+                </div>
+            )}
+            {isExploreTripsActive && (
+                <div className="trips-index">
+                    {otherUsersPastTrips?.map( trip => (
                         <TripIndexItem key={trip.id} trip={trip} indexType="past"/>
                     ))}
                 </div>
