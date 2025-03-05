@@ -71,10 +71,11 @@ function ActivityForm({ activity, formType }) {
       if (activityStart >= activityEnd) {
         newErrors.end_time = "End date and time must be after start date and time";
       }
-      if (activityStart < tripStart || activityStart > tripEnd) {
+      
+      if (activityStart < tripStart || new Date(startDate) > tripEnd) {
         newErrors.start_time = "Activity start date must be within the Trip's start and end dates.";
       }
-      if (activityEnd < tripStart || activityEnd > tripEnd) {
+      if (new Date(endDate) < tripStart || new Date(endDate)  > tripEnd) {
         newErrors.end_time = "Activity end date must be within the Trip's start and end dates.";
       }
 
@@ -179,6 +180,8 @@ function ActivityForm({ activity, formType }) {
               <label>Start Date</label>
               <input
                 type="date"
+                min={trip?.startDate}
+                max={trip?.endDate}
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
                 />
@@ -201,6 +204,8 @@ function ActivityForm({ activity, formType }) {
               <label>End Date</label>
               <input
                 type="date"
+                min={trip?.startDate}
+                max={trip?.endDate}
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
               />

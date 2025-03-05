@@ -26,10 +26,10 @@ function DeleteTripModal({tripId}){
             <p> Deleting this trip will remove all its activities and data. Are you sure you want to delete this trip?</p>
             <button className="delete-trip" 
                 onClick={handleDelete}
-             >Yes (Delete Trip)</button>
+             >Yes</button>
             <button className="delete-no" 
                 onClick={handleNo}
-             >No (Keep Trip)</button>
+             >No</button>
         </div>
     )
 }

@@ -1,10 +1,10 @@
 .activity-section {
     font-family: Geneva, Tahoma, sans-serif;
-    background-color: #e5f0f3;
+    /* background-color: #e5f0f3; */
     border-radius: 8px;
-    padding: 20px;
+    padding: 15px 0px 10px 0px;
     margin-top: 10px;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
 }
 
 .activity-section button {
@@ -14,7 +14,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .activity-section button:hover {
@@ -22,7 +22,7 @@
 }
 
 .trip-activities {
-    padding: 20px;
+    padding: 20px 0px 20px 0px;
 }
 
 .daily-activities {
@@ -66,7 +66,7 @@
 }
 .add-activity-btn{
     text-align: right;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 0px 0px 20px;
 }
 .location-icon{
     padding-right: 2px;

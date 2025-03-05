@@ -93,7 +93,7 @@ trips_data = [
         'is_private': True
     },
     {
-        'user_id': 2,
+        'user_id': 3,
         'name': 'Rome History Tour',
         'destination': 'Rome, Italy',
         'start_date': '2023-08-20',
@@ -125,7 +125,7 @@ trips_data = [
         'is_private': True
     },
     {
-        'user_id': 3,
+        'user_id': 2,
         'name': 'Great Wall of China Expedition',
         'destination': 'Beijing, China',
         'start_date': '2022-09-10',

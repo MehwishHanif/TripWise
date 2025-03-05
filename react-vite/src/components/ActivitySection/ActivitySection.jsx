@@ -103,6 +103,10 @@ function ActivitySection({ trip, indexType }) {
   };
 
   const groupActivitiesByDate = (activities) => {
+    activities.sort((a, b) => {
+      return new Date(a.startTime) - new Date(b.startTime); //sort activites by time
+    });
+
     const grouped = {};
     activities.forEach((activity) => {
       const date = formatDate(activity.startTime);
@@ -112,11 +116,11 @@ function ActivitySection({ trip, indexType }) {
       grouped[date].push(activity);
     });
 
-    for (const date in grouped) {
-      grouped[date].sort((a, b) => {
-        return new Date(a.startTime) - new Date(b.startTime);
-      });
-    }
+    // for (const date in grouped) { //sort activities by time
+    //   grouped[date].sort((a, b) => {
+    //     return new Date(a.startTime) - new Date(b.startTime);
+    //   });
+    // }
 
     return grouped;
   };
@@ -130,7 +134,7 @@ function ActivitySection({ trip, indexType }) {
   return (
     <div className="activity-section">
       <div className="add-activity-btn">
-        <button onClick={handleAddTripActivity}> Add an Activity</button>
+        {indexType !== "past" && (<button onClick={handleAddTripActivity}> Add an Activity</button>)}
       </div>
       <div className="trip-activities">
         {Object.entries(groupedActivities).map(([date, dailyActivities]) => (

@@ -172,6 +172,7 @@ function TripForm({ trip, formType }) {
           <input
             type="date"
             id="endDate"
+            min={minDate} 
             value={endDate}
             onChange={(e) => setEndDate(e.target.value)}
           />

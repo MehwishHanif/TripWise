@@ -18,9 +18,6 @@
     flex-direction: column;
 }
 
-/* .form-group {
-    margin-bottom: 15px;
-} */
 
 .activity-form-container label {
     color: #585454;
@@ -44,6 +41,7 @@ textarea {
     margin-top: 4px;
     color: #585454;
     font-size: 0.9em;
+    border: 1px solid #ccc;
 }
 .date-component{
     display: flex;
@@ -94,7 +92,7 @@ textarea {
 }
 
 .submit-button {
-    background-color: #007bff;
+    background-color: #29ABE2;
     color: white;
 }
 
@@ -118,8 +116,3 @@ textarea {
     margin-bottom: 4px;
     min-height: 1.4em;
 }
-
-/* .date-time-group {
-    display: flex;
-    align-items: center;
-} */

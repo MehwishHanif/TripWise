@@ -27,10 +27,10 @@ function DeleteActivityModal({ tripId, activityId }) {
       <h1>Confirm Delete</h1>
       <p>Are you sure you want to delete this activity?</p>
       <button className="delete-trip" onClick={handleDelete}>
-        Yes (Delete Activity)
+        Yes 
       </button>
       <button className="delete-no" onClick={handleNo}>
-        No (Keep Activity)
+        No 
       </button>
     </div>
   );

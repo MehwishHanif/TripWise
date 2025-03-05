@@ -8,8 +8,19 @@
     margin-bottom: 20px;
     overflow: hidden;
     padding: 15px;
-}
+    /* background: linear-gradient(136deg, rgb(68 132 206 / 46%), rgb(26 215 192 / 35%), rgb(236 138 46 / 42%), rgb(236, 240, 241)); */
 
+}
+.trip-user-icon{
+    font-size: xx-large;
+  color: #817c7c;
+}
+.trip-user-name{
+    font-size: 1.2em;
+  padding-left: 6px;
+  color: #575151;
+  padding-top: 5px;
+}
 .trip-info {
     flex-grow: 1;
     padding-right: 20px;
@@ -56,6 +67,10 @@
     cursor: pointer;
     margin-top: 10px;
     margin-right: 5px;
+}
+.trip-user-info{
+    display: flex;
+    padding: 15px 0px 7px 3px;
 }
 .location-icon{
     padding-right: 2px;
