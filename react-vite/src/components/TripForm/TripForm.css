@@ -63,6 +63,10 @@ textarea:focus {
     background-color: white;
     margin-top: 4px;
     border: 1px solid #ccc;
+    color: #585454;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 0.9em;
 }
 
 .form-actions {

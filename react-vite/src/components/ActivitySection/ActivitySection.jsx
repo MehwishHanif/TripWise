@@ -134,6 +134,7 @@ function ActivitySection({ trip, indexType }) {
   return (
     <div className="activity-section">
       <div className="add-activity-btn">
+        <h2>{`Activites (${activities.length})`}</h2>
         {indexType !== "past" && (<button onClick={handleAddTripActivity}> Add an Activity</button>)}
       </div>
       <div className="trip-activities">
@@ -155,15 +156,6 @@ function ActivitySection({ trip, indexType }) {
                     <div className="activity-time">
                       {formatTime(activity?.startTime)} -{" "}
                       {formatTime(activity?.endTime)}
-                      {/* {activityIcons[activity?.category] && (
-                        <span
-                          className="activity-icon"
-                          title={activity?.category}
-                          style={{ position: 'relative' }}
-                        >
-                          {activityIcons[activity?.category]}
-                        </span>
-                      )} */}
                     </div>
                     <div className="activity-category-icon">
                       {activityIcons[activity?.category] && (

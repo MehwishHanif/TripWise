@@ -87,6 +87,7 @@ function TripsIndex(){
       {isUpcomingTripsActive && (
         <div className="trips-index">
           <div className="add-trip-btn">
+            <h2>{`Trips (${upcomingTrips?.length})`}</h2>
             <button onClick={handleAddTrip}>Add a Trip</button>
           </div>
           {upcomingTrips?.map((trip) => (
@@ -96,6 +97,9 @@ function TripsIndex(){
       )}
       {isPastTripsActive && (
         <div className="trips-index">
+          <div className="add-trip-btn">
+            <h2>{`Trips (${pastTrips?.length})`}</h2>
+          </div>          
           {pastTrips?.map((trip) => (
             <TripIndexItem key={trip.id} trip={trip} indexType="past" />
           ))}
