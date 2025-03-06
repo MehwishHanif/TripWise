@@ -170,12 +170,12 @@ function ActivitySection({ trip, indexType }) {
                     </div>
                     <div className="activity-details">
                       <div className="activity-name">{activity?.name}</div>
-                      <div className="activity-location">
+                      {activity?.location && (<div className="activity-location">
                         <span className="location-icon">
                           <MdLocationPin />
                         </span>
                         {activity?.location}
-                      </div>
+                      </div>)}
                       {activity?.notes && (
                         <div className="activity-notes">
                           <span>

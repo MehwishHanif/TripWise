@@ -83,7 +83,7 @@
   justify-content: center;
   align-items: center;
   height: inherit;
-  width: 100px;
+  width: 12%;
 }
 .activity-actions-dropdown {
     position: absolute;
@@ -103,12 +103,12 @@
   justify-content: space-between;
   align-items: center;
 }
-.location-icon{
+.activity-location .location-icon{
     padding-right: 2px;
-    color: #ff8400;
+    color: #29abe2;
 }
 .activity-time {
-    width: 200px;
+    width: 27%;
     font-weight: 600;
     color: #555555b5;
     white-space: nowrap;
