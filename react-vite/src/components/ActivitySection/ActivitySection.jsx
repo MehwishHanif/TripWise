@@ -89,7 +89,7 @@ function ActivitySection({ trip, indexType }) {
       weekday: "short",
       month: "short",
       day: "numeric",
-      timeZone: "UTC",
+      // timeZone: "UTC",
     };
     return date.toLocaleDateString("en-US", options);
   };
