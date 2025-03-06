@@ -42,6 +42,8 @@ textarea {
     color: #585454;
     font-size: 0.9em;
     border: 1px solid #ccc;
+    padding: 12px;
+    box-sizing: border-box;
 }
 .date-component{
     display: flex;

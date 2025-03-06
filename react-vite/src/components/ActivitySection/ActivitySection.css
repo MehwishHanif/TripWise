@@ -27,8 +27,8 @@
 
 .daily-activities {
     margin-bottom: 15px;
-    border: 1px solid #eee;
-    border-radius: 4px;
+    /* border: 1px solid #eee; */
+    border-radius: 8px;
     padding: 10px;
     background-color: #ffffff;
 }
@@ -64,9 +64,44 @@
     padding-top: 14px;
   padding-bottom: 11px;
 }
+
+
+.activity-icon {
+    font-size: 1.3em;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #29abe2;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity-category-icon{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  width: 100px;
+}
+.activity-actions-dropdown {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
 .add-activity-btn{
     text-align: right;
   padding: 0px 0px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .location-icon{
     padding-right: 2px;
@@ -82,17 +117,7 @@
     gap: 6px;
     align-items: center;
 }
-.activity-icon {
-    font-size: 1.3em;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #29abe2;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;;
-}
+
 .toggle-menu-activity{
     /* padding: 5px 10px; */
     cursor: pointer;
@@ -140,23 +165,8 @@
     font-size: 1.2em;
     color: #888;
 }
-.activity-category-icon{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  height: inherit;
-  width: 65px;
-}
-.activity-actions-dropdown {
-    position: absolute;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 8px;
-    list-style: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-}
+
+
 
 .activity-actions-dropdown li {
     padding: 5px 10px;
@@ -166,4 +176,11 @@
 
 .activity-actions-dropdown li:hover {
     background-color: #f0f0f0;
+}
+
+.add-activity-btn h2{
+    font-size: 1.3em;
+  font-weight: 550;
+  color: #29abe2;
+  text-align: left;
 }
