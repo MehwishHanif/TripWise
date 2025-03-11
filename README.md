@@ -1,6 +1,83 @@
-# Flask React Project
+# TripWise
 
-This is the starter for the Flask React project.
+TripWise is an application designed to help users plan, organize, and track their travel itineraries. It provides a centralized platform to store essential trip details, and access travel information, ensuring a smooth and stress-free travel experience. In the future, it will also provide collaborative features for group trips and personalized recommendations based on travel history.
+
+🔭 [Click here to visit the TripWise website!](https://trip-wise-hvsp.onrender.com/)
+
+## Tech Stack
+
+**Frameworks and libraries:**
+
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=yellow" alt="Python"/> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/> <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Redux"/> <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask"/> <img src="https://img.shields.io/badge/SQLAlchemy-E94B3C?style=for-the-badge&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+
+**Database:**
+
+<img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL"/> <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
+
+**Hosting:**
+
+<img src="https://img.shields.io/badge/Render-4682B4?style=for-the-badge&logo=render&logoColor=white" alt="Render"/>
+
+## TripWise Wiki
+
+For more details on the architecture of TripWise, visit TripWise's wiki pages:
+
+* [Database Schema](https://github.com/MehwishHanif/TripWise/wiki/DB-Schema)
+* [Features List](https://github.com/MehwishHanif/TripWise/wiki/MVP's-Feature-List)
+* [Wireframe](https://github.com/MehwishHanif/TripWise/wiki/Wireframes)
+* [User Stories](https://github.com/MehwishHanif/TripWise/wiki/User-Stories)
+
+
+## TripWise UI 
+
+### Welcome Page
+
+* **Overview:** Displays a welcome message and prompts users to log in or sign up.
+* **User-Friendly Interface:** Clean and intuitive design ensures a seamless user experience.
+
+
+![Welcome Page](https://github.com/user-attachments/assets/cb9afdcf-aee9-48cd-8efc-26c7fa5b0d24)
+
+
+### Upcoming Trips
+
+* **Trip Management:** The landing page provides a quick overview of upcoming trips. Users can view and manage their upcoming trips, including dates, destinations, and key details.
+* **At-a-Glance Information:** Quick access to essential information about each trip.
+
+
+![Upcoming Trips](https://github.com/user-attachments/assets/94a739d2-c90b-44f4-a1f7-9f510293dc52)
+
+
+### Past Trips
+
+* **Trip History:** Users can review and reminisce about their past adventures.
+* **Record Keeping:** Keeps a history of travel experiences for future reference.
+
+
+![Past Trips](https://github.com/user-attachments/assets/a8173780-fb5a-4910-9237-13b5a207a66b)
+
+
+### Trip Details
+
+* **Comprehensive Trip Information:** Detailed view of each trip, including itinerary.
+* **Centralized Information:** All trip-related details in one convenient place.
+
+
+![Trip Details](https://github.com/user-attachments/assets/a4ffc874-17c1-44ae-97a7-4b851c702cab)
+
+
+### Trip Activities List
+
+* **Activity Planning:** Users can plan and manage their trip activities, ensuring a well-organized itinerary.
+* **Detailed Activity Management:** Tracks specific activities, times, and locations.
+
+
+![Trip Activities List](https://github.com/user-attachments/assets/ab78fa19-3eed-4a3f-96a9-ea34b57035c9)
+
+
+## Installation 
+
+If you want to run TripWise locally, follow these steps:
 
 ## Getting started
 
@@ -41,91 +118,10 @@ This is the starter for the Flask React project.
    flask run
    ```
 
-7. The React frontend has no styling applied. Copy the __.css__ files from your
-   Authenticate Me project into the corresponding locations in the
-   __react-vite__ folder to give your project a unique look.
-
-8. To run the React frontend in development, `cd` into the __react-vite__
+7. To run the React frontend in development, `cd` into the __react-vite__
    directory and run `npm i` to install dependencies. Next, run `npm run build`
    to create the `dist` folder. The starter has modified the `npm run build`
    command to include the `--watch` flag. This flag will rebuild the __dist__
    folder whenever you change your code, keeping the production version up to
    date.
 
-## Deployment through Render.com
-
-First, recall that Vite is a development dependency, so it will not be used in
-production. This means that you must already have the __dist__ folder located in
-the root of your __react-vite__ folder when you push to GitHub. This __dist__
-folder contains your React code and all necessary dependencies minified and
-bundled into a smaller footprint, ready to be served from your Python API.
-
-Begin deployment by running `npm run build` in your __react-vite__ folder and
-pushing any changes to GitHub.
-
-Refer to your Render.com deployment articles for more detailed instructions
-about getting started with [Render.com], creating a production database, and
-deployment debugging tips.
-
-From the Render [Dashboard], click on the "New +" button in the navigation bar,
-and click on "Web Service" to create the application that will be deployed.
-
-Select that you want to "Build and deploy from a Git repository" and click
-"Next". On the next page, find the name of the application repo you want to
-deploy and click the "Connect" button to the right of the name.
-
-Now you need to fill out the form to configure your app. Most of the setup will
-be handled by the __Dockerfile__, but you do need to fill in a few fields.
-
-Start by giving your application a name.
-
-Make sure the Region is set to the location closest to you, the Branch is set to
-"main", and Runtime is set to "Docker". You can leave the Root Directory field
-blank. (By default, Render will run commands from the root directory.)
-
-Select "Free" as your Instance Type.
-
-### Add environment variables
-
-In the development environment, you have been securing your environment
-variables in a __.env__ file, which has been removed from source control (i.e.,
-the file is gitignored). In this step, you will need to input the keys and
-values for the environment variables you need for production into the Render
-GUI.
-
-Add the following keys and values in the Render GUI form:
-
-- SECRET_KEY (click "Generate" to generate a secure secret for production)
-- FLASK_ENV production
-- FLASK_APP app
-- SCHEMA (your unique schema name, in snake_case)
-
-In a new tab, navigate to your dashboard and click on your Postgres database
-instance.
-
-Add the following keys and values:
-
-- DATABASE_URL (copy value from the **External Database URL** field)
-
-**Note:** Add any other keys and values that may be present in your local
-__.env__ file. As you work to further develop your project, you may need to add
-more environment variables to your local __.env__ file. Make sure you add these
-environment variables to the Render GUI as well for the next deployment.
-
-### Deploy
-
-Now you are finally ready to deploy! Click "Create Web Service" to deploy your
-project. The deployment process will likely take about 10-15 minutes if
-everything works as expected. You can monitor the logs to see your Dockerfile
-commands being executed and any errors that occur.
-
-When deployment is complete, open your deployed site and check to see that you
-have successfully deployed your Flask application to Render! You can find the
-URL for your site just below the name of the Web Service at the top of the page.
-
-**Note:** By default, Render will set Auto-Deploy for your project to true. This
-setting will cause Render to re-deploy your application every time you push to
-main, always keeping it up to date.
-
-[Render.com]: https://render.com/
-[Dashboard]: https://dashboard.render.com/
