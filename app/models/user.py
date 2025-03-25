@@ -21,7 +21,7 @@ class User(db.Model, UserMixin):
 
     # Relationship: A user has many trips
     trips = db.relationship("Trip", back_populates="user", cascade="all, delete-orphan")
-    comments = db.relationship("Comment", back_populates="user")
+    # comments = db.relationship("Comment", back_populates="user")
 
     @property
     def password(self):

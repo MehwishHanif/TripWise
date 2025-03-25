@@ -22,7 +22,7 @@ class Trip(db.Model):
     # Relationships
     user = db.relationship("User", back_populates="trips")
     activities = db.relationship("Activity", back_populates="trip", cascade="all, delete-orphan")
-    comments = db.relationship("Comment", back_populates="trip")
+    # comments = db.relationship("Comment", back_populates="trip")
 
     def to_dict(self):
         return {
