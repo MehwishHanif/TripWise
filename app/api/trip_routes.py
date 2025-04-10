@@ -48,7 +48,7 @@ def create_trip():
     """
     Creates a new trip and returns it in a dicitionary
     """
-    print("in POST Trips")
+    
     form = TripForm()  
     form["csrf_token"].data = request.cookies["csrf_token"]
 

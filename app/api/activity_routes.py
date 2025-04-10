@@ -12,7 +12,7 @@ def get_all_activities():
     """
     Query for all activites and returns them in a list of activity dictionaries
     """
-    print("GET ACTIVITIES")
+    
     activities = Activity.query.all()
     return {'activities': [activity.to_dict() for activity in activities]}
 
