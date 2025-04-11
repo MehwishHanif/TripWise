@@ -1,10 +1,8 @@
 .activity-section {
     font-family: Geneva, Tahoma, sans-serif;
-    /* background-color: #e5f0f3; */
     border-radius: 8px;
     padding: 15px 0px 10px 0px;
     margin-top: 10px;
-    /* border: 1px solid #ddd; */
 }
 
 .activity-section button {
@@ -27,7 +25,6 @@
 
 .daily-activities {
     margin-bottom: 15px;
-    /* border: 1px solid #eee; */
     border-radius: 8px;
     padding: 10px;
     background-color: #ffffff;
@@ -98,7 +95,7 @@
 
 .add-activity-btn{
     text-align: right;
-  padding: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,7 +116,6 @@
 }
 
 .toggle-menu-activity{
-    /* padding: 5px 10px; */
     cursor: pointer;
     width: fit-content;
 }

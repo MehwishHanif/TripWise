@@ -6,9 +6,6 @@ import { selectTripActivities } from "../../redux/activities";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem";
 import DeleteActivityModal from "../DeleteActivityModal";
 import { BsThreeDots } from "react-icons/bs";
-// import { MdLocationPin } from 'react-icons/md';
-// import { RiStickyNoteLine } from "react-icons/ri";
-// import { GiBigGear } from 'react-icons/gi';
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
