@@ -1,6 +1,5 @@
 import './TripIndexItem.css';
 import { useNavigate  } from 'react-router-dom';
-// import OpenModalButton from '../OpenModalButton';
 import OpenModalMenuItem from '../Navigation/OpenModalMenuItem';
 import DeleteTripModal from '../DeleteTripModal';
 import { BsThreeDots } from "react-icons/bs";
@@ -15,7 +14,6 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 function TripIndexItem({ trip, indexType, pageType }){
     const navigate = useNavigate();
     const [showMenu, setShowMenu] = useState(false);
-    // const [menuId, setMenuId] = useState("");
     const ulRef = useRef();
     const sessionUser = useSelector(state => state.session.user);
 
